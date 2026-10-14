@@ -3,8 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VITA-PULSE | 나의 역동적인 운동 취미 라이프</title>
-    <!-- Tailwind CSS CDN -->
+    <title>송태혁의 운동 라이프 | 운동 소개 & 기록</title>
+    <meta name="description" content="러닝, 웨이트 트레이닝, 클라이밍, 수영, 사이클을 즐기는 송태혁의 운동 라이프와 주간 운동 기록을 소개합니다.">
+    <meta name="theme-color" content="#07111f">
+    <meta property="og:title" content="송태혁의 운동 라이프">
+    <meta property="og:description" content="움직이고, 기록하고, 어제보다 성장하는 운동 이야기">
+
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -12,8 +16,8 @@
             theme: {
                 extend: {
                     colors: {
-                        primary: '#10B981', // Emerald green
-                        accent: '#3B82F6',   // Electric blue
+                        primary: '#10B981',
+                        accent: '#3B82F6',
                         darkbg: '#090D16',
                         cardbg: '#131C31',
                         cardhover: '#1E293B',
@@ -25,33 +29,189 @@
             }
         }
     </script>
-    <!-- Pretendard Font & FontAwesome Icons -->
+
     <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- AOS Animation Library -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
     <style>
+        :root {
+            color-scheme: dark;
+            --ink: #07111f;
+            --panel: #101d2d;
+            --line: rgba(148, 163, 184, .14);
+            --mint: #a3f57a;
+            --muted: #9aabc0;
+        }
+
         body {
             font-family: 'Pretendard', sans-serif;
+            background: var(--ink);
+            letter-spacing: -.015em;
         }
+
         .hero-gradient {
-            background: radial-gradient(circle at 50% 20%, rgba(16, 185, 129, 0.15) 0%, rgba(9, 13, 22, 0) 70%);
+            background:
+                radial-gradient(ellipse at 78% 12%, rgba(163, 245, 122, .13), transparent 34%),
+                radial-gradient(ellipse at 12% 48%, rgba(56, 189, 248, .10), transparent 38%),
+                linear-gradient(145deg, #07111f 4%, #0a1727 54%, #08121e 100%);
+        }
+
+        section[id] {
+            scroll-margin-top: 6rem;
+        }
+
+        a, button, input, textarea {
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        :focus-visible {
+            outline: 3px solid #a3f57a;
+            outline-offset: 3px;
+        }
+
+        .page-grid {
+            background-image:
+                linear-gradient(rgba(148, 163, 184, .045) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(148, 163, 184, .045) 1px, transparent 1px);
+            background-size: 48px 48px;
+            mask-image: linear-gradient(to bottom, black, transparent 90%);
+        }
+
+        .glass-panel {
+            background: linear-gradient(145deg, rgba(17, 31, 48, .92), rgba(11, 22, 36, .86));
+            border-color: var(--line);
+        }
+
+        .section-kicker {
+            color: var(--mint);
+        }
+
+        .gallery-item img {
+            filter: saturate(.82);
+        }
+
+        .gallery-caption {
+            opacity: 1 !important;
+            background: linear-gradient(to top, rgba(4, 12, 22, .92), rgba(4, 12, 22, .12) 75%, transparent);
+        }
+
+        .mobile-menu[hidden] {
+            display: none !important;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+                animation-duration: .01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: .01ms !important;
+            }
+        }
+
+        html[data-theme="light"] {
+            color-scheme: light;
+        }
+
+        html[data-theme="light"] body {
+            background: #f3f7f6 !important;
+            color: #14251f !important;
+        }
+
+        html[data-theme="light"] header,
+        html[data-theme="light"] .bg-darkbg\/85,
+        html[data-theme="light"] .bg-darkbg,
+        html[data-theme="light"] .bg-slate-950,
+        html[data-theme="light"] .bg-slate-900\/50 {
+            background-color: #f3f7f6 !important;
+        }
+
+        html[data-theme="light"] .bg-cardbg,
+        html[data-theme="light"] .bg-slate-900\/80,
+        html[data-theme="light"] .bg-slate-900\/60,
+        html[data-theme="light"] .bg-slate-900 {
+            background-color: #fff !important;
+        }
+
+        html[data-theme="light"] .hero-gradient {
+            background:
+                radial-gradient(ellipse at 78% 12%, rgba(16, 185, 129, .15), transparent 36%),
+                linear-gradient(145deg, #f4f9f6, #eaf4ef 58%, #f5f8fc) !important;
+        }
+
+        html[data-theme="light"] .text-white,
+        html[data-theme="light"] .text-slate-100,
+        html[data-theme="light"] .text-slate-200 {
+            color: #14251f !important;
+        }
+
+        html[data-theme="light"] .text-slate-300,
+        html[data-theme="light"] .text-slate-400 {
+            color: #53665f !important;
+        }
+
+        html[data-theme="light"] .text-slate-500,
+        html[data-theme="light"] .text-slate-600 {
+            color: #66776f !important;
+        }
+
+        html[data-theme="light"] .text-primary {
+            color: #047857 !important;
+        }
+
+        html[data-theme="light"] .border-slate-800,
+        html[data-theme="light"] .border-slate-900,
+        html[data-theme="light"] .border-slate-700 {
+            border-color: rgba(20, 37, 31, .12) !important;
+        }
+
+        html[data-theme="light"] input,
+        html[data-theme="light"] textarea {
+            color: #14251f !important;
+        }
+
+        html[data-theme="light"] .hero-gradient .text-darkbg {
+            color: #07111f !important;
+        }
+
+        html[data-theme="light"] .bg-slate-800 {
+            background-color: #e5eeea !important;
+        }
+
+        @media (max-width: 767px) {
+            .mobile-menu {
+                position: absolute;
+                top: 4.5rem;
+                left: 1rem;
+                right: 1rem;
+                padding: .75rem;
+                border: 1px solid var(--line);
+                border-radius: 1rem;
+                background: rgba(10, 22, 36, .97);
+                box-shadow: 0 20px 50px rgba(0, 0, 0, .28);
+            }
         }
     </style>
 </head>
+
 <body class="bg-darkbg text-slate-100 min-h-screen selection:bg-primary selection:text-white">
 
     <header class="fixed top-0 left-0 right-0 z-50 bg-darkbg/85 backdrop-blur-md border-b border-slate-800/80">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <a href="#" class="flex items-center gap-3 group">
+            <a href="#hero" class="flex items-center gap-3 group" aria-label="송태혁 운동 라이프 홈">
                 <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-primary to-emerald-400 flex items-center justify-center shadow-lg shadow-primary/30 group-hover:scale-105 transition-transform">
                     <i class="fa-solid fa-bolt text-darkbg text-lg"></i>
                 </div>
-                <span class="text-2xl font-black tracking-wider bg-gradient-to-r from-white via-slate-200 to-primary bg-clip-text text-transparent">VITA-PULSE</span>
+                <span class="flex flex-col leading-none">
+                    <span class="text-xl sm:text-2xl font-black tracking-tight bg-gradient-to-r from-white via-slate-200 to-primary bg-clip-text text-transparent">송태혁</span>
+                    <span class="text-[9px] tracking-[.24em] text-slate-500 mt-1.5">MOVE · GROW · REPEAT</span>
+                </span>
             </a>
-            
-            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+
+            <nav aria-label="주요 메뉴" class="hidden md:flex items-center gap-7 text-sm font-medium text-slate-300">
                 <a href="#hero" class="hover:text-primary transition-colors">홈</a>
                 <a href="#routines" class="hover:text-primary transition-colors">운동 루틴</a>
                 <a href="#gallery" class="hover:text-primary transition-colors">활동 갤러리</a>
@@ -61,36 +221,55 @@
             </nav>
 
             <div class="flex items-center gap-4">
-                <button onclick="toggleDarkMode()" class="p-2.5 rounded-xl bg-slate-800/80 border border-slate-700 text-slate-300 hover:text-primary transition-colors" title="다크/라이트모드">
+                <button type="button" onclick="toggleDarkMode()" class="p-2.5 rounded-xl bg-slate-800/80 border border-slate-700 text-slate-300 hover:text-primary transition-colors" aria-label="화면 테마 변경" title="화면 테마 변경">
                     <i id="theme-icon" class="fa-solid fa-sun"></i>
                 </button>
+
+                <button type="button" id="mobile-menu-button" class="md:hidden p-2.5 rounded-xl bg-slate-800/80 border border-slate-700 text-slate-300" aria-label="메뉴 열기" aria-expanded="false" aria-controls="mobile-menu" onclick="toggleMobileMenu()">
+                    <i id="mobile-menu-icon" class="fa-solid fa-bars"></i>
+                </button>
+
                 <a href="#tracker" class="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-primary hover:bg-emerald-600 text-darkbg font-bold text-sm shadow-lg shadow-primary/20 transition-all hover:scale-105">
                     <i class="fa-solid fa-chart-line"></i>
                     <span>대시보드</span>
                 </a>
             </div>
         </div>
+
+        <nav id="mobile-menu" class="mobile-menu md:hidden mx-4 mb-3 space-y-1" aria-label="모바일 메뉴" hidden>
+            <a href="#hero" onclick="closeMobileMenu()" class="block rounded-lg px-4 py-3 text-sm font-semibold text-slate-200 hover:bg-slate-800">홈</a>
+            <a href="#routines" onclick="closeMobileMenu()" class="block rounded-lg px-4 py-3 text-sm font-semibold text-slate-200 hover:bg-slate-800">운동 루틴</a>
+            <a href="#gallery" onclick="closeMobileMenu()" class="block rounded-lg px-4 py-3 text-sm font-semibold text-slate-200 hover:bg-slate-800">활동 갤러리</a>
+            <a href="#tracker" onclick="closeMobileMenu()" class="block rounded-lg px-4 py-3 text-sm font-semibold text-slate-200 hover:bg-slate-800">주간 트래커</a>
+            <a href="#playlist" onclick="closeMobileMenu()" class="block rounded-lg px-4 py-3 text-sm font-semibold text-slate-200 hover:bg-slate-800">운동 BGM</a>
+            <a href="#guestbook" onclick="closeMobileMenu()" class="block rounded-lg px-4 py-3 text-sm font-semibold text-slate-200 hover:bg-slate-800">방명록</a>
+        </nav>
     </header>
 
     <section id="hero" class="relative min-h-screen flex items-center justify-center pt-24 overflow-hidden hero-gradient">
-        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#10B981_1px,transparent_1px)] [background-size:24px_24px]"></div>
-        
+        <div class="absolute inset-0 page-grid opacity-70"></div>
+
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div data-aos="fade-right" data-aos-duration="1000">
                 <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-semibold mb-6">
                     <i class="fa-solid fa-fire text-amber-400"></i>
                     <span id="dynamic-quote">"오늘 흘린 땀은 내일의 에너지가 된다."</span>
                 </div>
-                <h1 class="text-4xl sm:text-6xl font-black tracking-tight leading-tight mb-6">
-                    열정으로 달리고 <br>
-                    <span class="bg-gradient-to-r from-primary via-emerald-400 to-teal-300 bg-clip-text text-transparent">한계를 넘어 성장한다!</span>
+
+                <p class="section-kicker font-bold text-xs sm:text-sm tracking-[.22em] mb-4">SONG TAE HYUK · FITNESS JOURNAL</p>
+
+                <h1 class="text-4xl sm:text-6xl font-black tracking-tight leading-[1.12] mb-6">
+                    송태혁의<br>
+                    <span class="bg-gradient-to-r from-primary via-emerald-300 to-cyan-300 bg-clip-text text-transparent">운동 라이프</span>
                 </h1>
-                <p class="text-slate-400 text-lg mb-8 leading-relaxed max-w-xl">
-                    러닝, 헬스, 클라이밍, 사이클, 수영까지! 다양한 스포츠를 사랑하는 운동 마니아의 
-                    취미 생활 아카이브이자 기록 공간에 오신 것을 환영합니다.
+
+                <p class="text-slate-300 text-lg sm:text-xl mb-8 leading-relaxed max-w-xl">
+                    움직이고, 기록하고, 어제보다 성장하는 시간.<br class="hidden sm:block">
+                    다양한 운동과 루틴을 통해 만들어가는 건강한 일상을 소개합니다.
                 </p>
+
                 <div class="flex flex-wrap gap-4">
-                    <a href="#routines" class="px-8 py-4 rounded-xl bg-primary hover:bg-emerald-600 text-darkbg font-bold text-base shadow-xl shadow-primary/30 transition-all hover:scale-105 flex items-center gap-2">
+                    <a href="#routines" class="px-7 py-4 rounded-xl bg-primary hover:bg-lime-300 text-darkbg font-extrabold text-base shadow-xl shadow-primary/20 transition-all hover:-translate-y-0.5 flex items-center gap-2">
                         <span>운동 종목 둘러보기</span>
                         <i class="fa-solid fa-arrow-right"></i>
                     </a>
@@ -101,13 +280,14 @@
                 </div>
             </div>
 
-            <!-- Hero Quick Counter Widget -->
             <div data-aos="fade-left" data-aos-duration="1000">
-                <div class="bg-cardbg rounded-3xl p-8 border border-slate-800 shadow-2xl relative">
+                <div class="glass-panel rounded-3xl p-6 sm:p-8 border shadow-2xl relative overflow-hidden">
+                    <div class="absolute -right-16 -top-20 w-56 h-56 rounded-full bg-primary/10 blur-3xl pointer-events-none"></div>
+
                     <div class="flex items-center justify-between mb-8">
                         <div>
-                            <span class="text-xs font-bold text-primary uppercase tracking-wider">TODAY'S METRICS</span>
-                            <h3 class="text-2xl font-black text-white mt-1">실시간 활동량 계산기</h3>
+                            <span class="text-xs font-bold text-primary uppercase tracking-[.2em]">DAILY CHECK-IN</span>
+                            <h2 class="text-2xl font-black text-white mt-1">오늘의 활동 기록</h2>
                         </div>
                         <div class="w-12 h-12 rounded-2xl bg-primary/10 text-primary flex items-center justify-center">
                             <i class="fa-solid fa-stopwatch text-xl"></i>
@@ -117,31 +297,36 @@
                     <div class="space-y-6">
                         <div>
                             <div class="flex justify-between text-sm mb-2">
-                                <span class="text-slate-400 font-medium"><i class="fa-solid fa-shoe-prints mr-2 text-primary"></i>오늘 걸은 걸음수</span>
-                                <span class="text-white font-bold" id="step-display">12,450 보</span>
+                                <label for="step-slider" class="text-slate-400 font-medium"><i class="fa-solid fa-shoe-prints mr-2 text-primary"></i>오늘의 걸음 수</label>
+                                <span class="text-white font-bold tabular-nums" id="step-display">0 보</span>
                             </div>
-                            <input type="range" min="1000" max="30000" step="500" value="12450" oninput="updateSteps(this.value)" 
-                                   class="w-full accent-primary bg-slate-800 rounded-lg h-2 cursor-pointer">
+                            <input id="step-slider" type="range" min="0" max="30000" step="500" value="0" oninput="updateSteps(this.value)" aria-label="오늘의 걸음 수 설정" class="w-full accent-primary bg-slate-800 rounded-lg h-2 cursor-pointer">
+                            <div class="flex justify-between text-[11px] text-slate-500 mt-2">
+                                <span>0 보</span><span>목표 8,000 보</span><span>30,000 보</span>
+                            </div>
                         </div>
 
                         <div>
                             <div class="flex justify-between text-sm mb-2">
                                 <span class="text-slate-400 font-medium"><i class="fa-solid fa-fire mr-2 text-amber-400"></i>추정 소모 칼로리</span>
-                                <span class="text-white font-bold" id="calorie-display">747 kcal</span>
+                                <span class="text-white font-bold tabular-nums" id="calorie-display">0 kcal</span>
                             </div>
-                            <div class="w-full bg-slate-800 rounded-lg h-2 overflow-hidden">
-                                <div id="calorie-bar" class="bg-gradient-to-r from-amber-500 to-primary h-full w-3/4 transition-all"></div>
+                            <div class="w-full bg-slate-800 rounded-full h-2 overflow-hidden mt-4" role="progressbar" aria-label="하루 걸음 목표 달성률" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                                <div id="step-progress-bar" class="bg-gradient-to-r from-primary to-cyan-300 h-full rounded-full transition-all" style="width:0%"></div>
                             </div>
+                            <p id="step-progress-label" class="text-right text-[11px] text-slate-500 mt-2">하루 목표의 0%</p>
                         </div>
+
+                        <p class="text-[11px] text-slate-500 mt-2">칼로리 값은 걸음 수를 기준으로 한 참고용 추정치입니다.</p>
 
                         <div class="pt-4 border-t border-slate-800 grid grid-cols-2 gap-4 text-center">
                             <div class="bg-slate-900/60 p-4 rounded-2xl border border-slate-800">
-                                <span class="text-xs text-slate-400 block mb-1">이번 주 운동일수</span>
-                                <span class="text-xl font-black text-primary">5일 / 7일</span>
+                                <span class="text-xs text-slate-400 block mb-1">이번 주 운동일</span>
+                                <span class="text-xl font-black text-primary"><span id="hero-week-count">0</span><span class="text-slate-500 text-sm font-semibold"> / 7일</span></span>
                             </div>
                             <div class="bg-slate-900/60 p-4 rounded-2xl border border-slate-800">
-                                <span class="text-xs text-slate-400 block mb-1">컨디션 상태</span>
-                                <span class="text-xl font-black text-emerald-400">최상 🔥</span>
+                                <span class="text-xs text-slate-400 block mb-1">꾸준함이 만드는 변화</span>
+                                <span class="text-xl font-black text-emerald-400">매일 한 걸음</span>
                             </div>
                         </div>
                     </div>
@@ -153,32 +338,31 @@
     <section id="routines" class="py-24 bg-slate-900/50 border-t border-slate-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-2xl mx-auto mb-16" data-aos="fade-up">
-                <h2 class="text-primary font-bold text-sm tracking-widest uppercase mb-3">MY FAVORITE SPORTS</h2>
-                <p class="text-3xl sm:text-4xl font-black text-white">종목별 상세 루틴 & 팁</p>
+                <p aria-hidden="true" class="section-kicker font-bold text-xs tracking-[.2em] uppercase mb-3">MOVE WITH PURPOSE</p>
+                <h2 class="text-3xl sm:text-4xl font-black text-white">종목별 루틴과 실천 팁</h2>
+                <p class="text-slate-400 text-sm mt-3">아래 내용은 운동을 시작할 때 참고할 수 있는 루틴 예시입니다.</p>
             </div>
 
-            <!-- Category Tabs -->
-            <div class="flex flex-wrap justify-center gap-3 mb-12" data-aos="fade-up">
-                <button onclick="switchTab('running')" id="btn-running" class="tab-btn px-6 py-3 rounded-2xl font-bold text-sm transition-all bg-primary text-darkbg shadow-lg shadow-primary/20">
+            <div class="flex flex-wrap justify-center gap-3 mb-12" role="tablist" aria-label="운동 종목 선택" data-aos="fade-up">
+                <button type="button" role="tab" tabindex="0" data-tab="running" aria-selected="true" aria-controls="tab-content" onkeydown="moveRoutineTab(event)" onclick="switchTab('running')" id="btn-running" class="tab-btn px-6 py-3 rounded-2xl font-bold text-sm transition-all bg-primary text-darkbg shadow-lg shadow-primary/20">
                     <i class="fa-solid fa-person-running mr-2"></i> 러닝
                 </button>
-                <button onclick="switchTab('gym')" id="btn-gym" class="tab-btn px-6 py-3 rounded-2xl font-bold text-sm transition-all bg-slate-800 text-slate-300 hover:bg-slate-700">
+                <button type="button" role="tab" tabindex="-1" data-tab="gym" aria-selected="false" aria-controls="tab-content" onkeydown="moveRoutineTab(event)" onclick="switchTab('gym')" id="btn-gym" class="tab-btn px-6 py-3 rounded-2xl font-bold text-sm transition-all bg-slate-800 text-slate-300 hover:bg-slate-700">
                     <i class="fa-solid fa-dumbbell mr-2"></i> 헬스
                 </button>
-                <button onclick="switchTab('climbing')" id="btn-climbing" class="tab-btn px-6 py-3 rounded-2xl font-bold text-sm transition-all bg-slate-800 text-slate-300 hover:bg-slate-700">
+                <button type="button" role="tab" tabindex="-1" data-tab="climbing" aria-selected="false" aria-controls="tab-content" onkeydown="moveRoutineTab(event)" onclick="switchTab('climbing')" id="btn-climbing" class="tab-btn px-6 py-3 rounded-2xl font-bold text-sm transition-all bg-slate-800 text-slate-300 hover:bg-slate-700">
                     <i class="fa-solid fa-mountain mr-2"></i> 클라이밍
                 </button>
-                <button onclick="switchTab('swimming')" id="btn-swimming" class="tab-btn px-6 py-3 rounded-2xl font-bold text-sm transition-all bg-slate-800 text-slate-300 hover:bg-slate-700">
+                <button type="button" role="tab" tabindex="-1" data-tab="swimming" aria-selected="false" aria-controls="tab-content" onkeydown="moveRoutineTab(event)" onclick="switchTab('swimming')" id="btn-swimming" class="tab-btn px-6 py-3 rounded-2xl font-bold text-sm transition-all bg-slate-800 text-slate-300 hover:bg-slate-700">
                     <i class="fa-solid fa-water mr-2"></i> 수영
                 </button>
-                <button onclick="switchTab('cycling')" id="btn-cycling" class="tab-btn px-6 py-3 rounded-2xl font-bold text-sm transition-all bg-slate-800 text-slate-300 hover:bg-slate-700">
+                <button type="button" role="tab" tabindex="-1" data-tab="cycling" aria-selected="false" aria-controls="tab-content" onkeydown="moveRoutineTab(event)" onclick="switchTab('cycling')" id="btn-cycling" class="tab-btn px-6 py-3 rounded-2xl font-bold text-sm transition-all bg-slate-800 text-slate-300 hover:bg-slate-700">
                     <i class="fa-solid fa-bicycle mr-2"></i> 사이클
                 </button>
             </div>
 
-            <!-- Tab Content Container -->
-            <div id="tab-content" class="bg-cardbg rounded-3xl p-8 sm:p-12 border border-slate-800 shadow-2xl" data-aos="fade-up">
-                <!-- Content injected dynamically via JS -->
+            <div id="tab-content" role="tabpanel" tabindex="0" class="bg-cardbg rounded-3xl p-8 sm:p-12 border border-slate-800 shadow-2xl" data-aos="fade-up">
+                <!-- 운동 루틴 내용은 JavaScript로 표시됩니다. -->
             </div>
         </div>
     </section>
@@ -186,47 +370,39 @@
     <section id="gallery" class="py-24 bg-darkbg border-t border-slate-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-2xl mx-auto mb-16" data-aos="fade-up">
-                <h2 class="text-primary font-bold text-sm tracking-widest uppercase mb-3">ACTIVITY MOMENTS</h2>
-                <p class="text-3xl sm:text-4xl font-black text-white">운동 순간 갤러리</p>
+                <p aria-hidden="true" class="section-kicker font-bold text-xs tracking-[.2em] uppercase mb-3">ACTIVITY MOMENTS</p>
+                <h2 class="text-3xl sm:text-4xl font-black text-white">운동 순간 갤러리</h2>
                 <div class="flex flex-wrap justify-center gap-2 mt-6">
-                    <button onclick="filterGallery('all')" class="px-4 py-2 rounded-xl bg-primary text-darkbg text-xs font-bold filter-pill">전체</button>
-                    <button onclick="filterGallery('running')" class="px-4 py-2 rounded-xl bg-slate-800 text-slate-300 text-xs font-bold filter-pill hover:bg-slate-700">러닝</button>
-                    <button onclick="filterGallery('gym')" class="px-4 py-2 rounded-xl bg-slate-800 text-slate-300 text-xs font-bold filter-pill hover:bg-slate-700">헬스</button>
-                    <button onclick="filterGallery('climbing')" class="px-4 py-2 rounded-xl bg-slate-800 text-slate-300 text-xs font-bold filter-pill hover:bg-slate-700">클라이밍</button>
+                    <button type="button" aria-pressed="true" onclick="filterGallery('all', this)" class="px-4 py-2 rounded-xl bg-primary text-darkbg text-xs font-bold filter-pill">전체</button>
+                    <button type="button" aria-pressed="false" onclick="filterGallery('running', this)" class="px-4 py-2 rounded-xl bg-slate-800 text-slate-300 text-xs font-bold filter-pill hover:bg-slate-700">러닝</button>
+                    <button type="button" aria-pressed="false" onclick="filterGallery('gym', this)" class="px-4 py-2 rounded-xl bg-slate-800 text-slate-300 text-xs font-bold filter-pill hover:bg-slate-700">헬스</button>
+                    <button type="button" aria-pressed="false" onclick="filterGallery('climbing', this)" class="px-4 py-2 rounded-xl bg-slate-800 text-slate-300 text-xs font-bold filter-pill hover:bg-slate-700">클라이밍</button>
                 </div>
+                <p class="text-xs text-slate-500 mt-5">갤러리 이미지는 운동 종목을 소개하기 위한 예시 사진입니다.</p>
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="gallery-grid">
-                <!-- Gallery Item 1 -->
                 <div data-aos="zoom-in" data-category="running" class="gallery-item relative group aspect-video sm:aspect-square rounded-3xl overflow-hidden border border-slate-800">
-                    <img src="https://images.unsplash.com/photo-1552674605-db6ffd4facb5?q=80&w=800&auto=format&fit=crop" 
-                         onerror="this.src='https://placehold.co/600x600/131C31/10B981?text=Running'"
-                         alt="Running" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-darkbg/90 via-darkbg/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-6">
+                    <img loading="lazy" src="https://images.unsplash.com/photo-1552674605-db6ffd4facb5?q=80&w=800&auto=format&fit=crop" onerror="this.src='https://placehold.co/600x600/131C31/10B981?text=Running'" alt="아침 도로를 달리는 러너" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="gallery-caption absolute inset-0 bg-gradient-to-t from-darkbg/90 via-darkbg/20 to-transparent flex flex-col justify-end p-6">
                         <span class="text-primary text-xs font-semibold uppercase tracking-wider mb-1">Running</span>
-                        <h4 class="text-white font-bold text-lg">한강 아침 10km 페이스 런</h4>
+                        <h3 class="text-white font-bold text-lg">아침 러닝으로 하루 시작</h3>
                     </div>
                 </div>
 
-                <!-- Gallery Item 2 -->
                 <div data-aos="zoom-in" data-category="gym" class="gallery-item relative group aspect-video sm:aspect-square rounded-3xl overflow-hidden border border-slate-800">
-                    <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=800&auto=format&fit=crop" 
-                         onerror="this.src='https://placehold.co/600x600/131C31/10B981?text=Gym'"
-                         alt="Gym" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-darkbg/90 via-darkbg/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-6">
+                    <img loading="lazy" src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=800&auto=format&fit=crop" onerror="this.src='https://placehold.co/600x600/131C31/10B981?text=Gym'" alt="웨이트 운동을 하는 사람" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="gallery-caption absolute inset-0 bg-gradient-to-t from-darkbg/90 via-darkbg/20 to-transparent flex flex-col justify-end p-6">
                         <span class="text-primary text-xs font-semibold uppercase tracking-wider mb-1">Gym</span>
-                        <h4 class="text-white font-bold text-lg">스쿼트 PR 140kg 경신</h4>
+                        <h3 class="text-white font-bold text-lg">웨이트 트레이닝으로 근력 강화</h3>
                     </div>
                 </div>
 
-                <!-- Gallery Item 3 -->
                 <div data-aos="zoom-in" data-category="climbing" class="gallery-item relative group aspect-video sm:aspect-square rounded-3xl overflow-hidden border border-slate-800">
-                    <img src="https://images.unsplash.com/photo-1566793671569-4256c0757d23?q=80&w=800&auto=format&fit=crop" 
-                         onerror="this.src='https://placehold.co/600x600/131C31/10B981?text=Climbing'"
-                         alt="Climbing" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-darkbg/90 via-darkbg/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-6">
+                    <img loading="lazy" src="https://images.unsplash.com/photo-1566793671569-4256c0757d23?q=80&w=800&auto=format&fit=crop" onerror="this.src='https://placehold.co/600x600/131C31/10B981?text=Climbing'" alt="실내 암벽을 오르는 클라이머" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="gallery-caption absolute inset-0 bg-gradient-to-t from-darkbg/90 via-darkbg/20 to-transparent flex flex-col justify-end p-6">
                         <span class="text-primary text-xs font-semibold uppercase tracking-wider mb-1">Climbing</span>
-                        <h4 class="text-white font-bold text-lg">실내 클라이밍 V5 문제 완등</h4>
+                        <h3 class="text-white font-bold text-lg">집중력과 균형을 기르는 클라이밍</h3>
                     </div>
                 </div>
             </div>
@@ -236,36 +412,34 @@
     <section id="tracker" class="py-24 bg-slate-900/50 border-t border-slate-800">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-2xl mx-auto mb-16" data-aos="fade-up">
-                <h2 class="text-primary font-bold text-sm tracking-widest uppercase mb-3">WEEKLY HABIT TRACKER</h2>
-                <p class="text-3xl sm:text-4xl font-black text-white">주간 운동 습관 트래커</p>
-                <p class="text-slate-400 text-sm mt-2">매일의 실천을 체크하고 연속 달성 기록을 쌓아보세요!</p>
+                <p aria-hidden="true" class="section-kicker font-bold text-xs tracking-[.2em] uppercase mb-3">WEEKLY HABIT TRACKER</p>
+                <h2 class="text-3xl sm:text-4xl font-black text-white">주간 운동 습관 트래커</h2>
+                <p class="text-slate-400 text-sm mt-2">운동한 날을 체크하면 이번 주 실천 현황이 이 기기에 저장됩니다.</p>
             </div>
 
             <div class="bg-cardbg rounded-3xl p-8 sm:p-10 border border-slate-800 shadow-xl" data-aos="fade-up">
                 <div class="flex items-center justify-between mb-8 pb-6 border-b border-slate-800">
                     <div>
                         <span class="text-xs text-slate-400 uppercase font-bold tracking-wider">이번 주 성취도</span>
-                        <h4 class="text-2xl font-black text-white mt-1"><span id="tracker-count">3</span> / 7일 완료</h4>
+                        <h3 class="text-2xl font-black text-white mt-1" aria-live="polite"><span id="tracker-count">0</span> / 7일 완료</h3>
                     </div>
-                    <div class="w-16 h-16 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary font-black text-xl" id="tracker-percent">
-                        43%
-                    </div>
+                    <div class="w-16 h-16 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary font-black text-xl" id="tracker-percent">0%</div>
                 </div>
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-7 gap-4 mb-8">
                     <label class="flex flex-col items-center justify-center p-4 rounded-2xl bg-slate-900/80 border border-slate-800 cursor-pointer hover:border-primary/50 transition-all">
                         <span class="text-xs font-semibold text-slate-400 mb-2">월요일</span>
-                        <input type="checkbox" checked onchange="updateTracker()" class="w-6 h-6 accent-primary rounded cursor-pointer mb-2">
+                        <input type="checkbox" data-day="monday" onchange="updateTracker()" class="w-6 h-6 accent-primary rounded cursor-pointer mb-2" aria-label="월요일 운동 완료">
                         <span class="text-xs font-bold text-emerald-400">러닝</span>
                     </label>
                     <label class="flex flex-col items-center justify-center p-4 rounded-2xl bg-slate-900/80 border border-slate-800 cursor-pointer hover:border-primary/50 transition-all">
                         <span class="text-xs font-semibold text-slate-400 mb-2">화요일</span>
-                        <input type="checkbox" checked onchange="updateTracker()" class="w-6 h-6 accent-primary rounded cursor-pointer mb-2">
+                        <input type="checkbox" data-day="tuesday" onchange="updateTracker()" class="w-6 h-6 accent-primary rounded cursor-pointer mb-2" aria-label="화요일 운동 완료">
                         <span class="text-xs font-bold text-emerald-400">헬스</span>
                     </label>
                     <label class="flex flex-col items-center justify-center p-4 rounded-2xl bg-slate-900/80 border border-slate-800 cursor-pointer hover:border-primary/50 transition-all">
                         <span class="text-xs font-semibold text-slate-400 mb-2">수요일</span>
-                        <input type="checkbox" checked onchange="updateTracker()" class="w-6 h-6 accent-primary rounded cursor-pointer mb-2">
+                        <input type="checkbox" data-day="wednesday" onchange="updateTracker()" class="w-6 h-6 accent-primary rounded cursor-pointer mb-2" aria-label="수요일 운동 완료">
                         <span class="text-xs font-bold text-emerald-400">클라이밍</span>
                     </label>
                     <label class="flex flex-col items-center justify-center p-4 rounded-2xl bg-slate-900/80 border border-slate-800 cursor-pointer hover:border-primary/50 transition-all">
@@ -298,17 +472,15 @@
         </div>
     </section>
 
-    <!-- NEW WORKOUT PLAYLIST SECTION -->
     <section id="playlist" class="py-24 bg-darkbg border-t border-slate-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-2xl mx-auto mb-16" data-aos="fade-up">
-                <h2 class="text-primary font-bold text-sm tracking-widest uppercase mb-3">WORKOUT PLAYLIST</h2>
-                <p class="text-3xl sm:text-4xl font-black text-white">운동 에너지 사운드트랙</p>
+                <p aria-hidden="true" class="section-kicker font-bold text-xs tracking-[.2em] uppercase mb-3">WORKOUT PLAYLIST</p>
+                <h2 class="text-3xl sm:text-4xl font-black text-white">운동 에너지 사운드트랙</h2>
                 <p class="text-slate-400 text-sm mt-2">운동에 한계와 열정을 더해줄 전용 음원 플레이리스트입니다.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8" data-aos="fade-up">
-                <!-- Track 1 -->
                 <div class="bg-cardbg rounded-3xl p-6 border border-slate-800 hover:border-primary/50 transition-all flex flex-col justify-between group">
                     <div>
                         <div class="flex items-center justify-between mb-6">
@@ -322,7 +494,7 @@
                     </div>
                     <div class="space-y-3">
                         <div class="rounded-2xl overflow-hidden bg-slate-900 border border-slate-800">
-                            <iframe src="https://suno.com/embed/6c2fefc2-b63c-4764-83cf-95049f3ba5b1" class="w-full h-36" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+                            <iframe title="새벽 세 시의 온기 음악 플레이어" src="https://suno.com/embed/6c2fefc2-b63c-4764-83cf-95049f3ba5b1" class="w-full h-36" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
                         </div>
                         <a href="https://suno.com/song/6c2fefc2-b63c-4764-83cf-95049f3ba5b1?sh=rbH6Mn4aUgo25mfz" target="_blank" rel="noopener noreferrer" class="w-full py-3 rounded-xl bg-slate-800 hover:bg-primary hover:text-darkbg text-slate-200 font-bold text-xs transition-all flex items-center justify-center gap-2">
                             <i class="fa-solid fa-external-link"></i>
@@ -331,7 +503,6 @@
                     </div>
                 </div>
 
-                <!-- Track 2 -->
                 <div class="bg-cardbg rounded-3xl p-6 border border-slate-800 hover:border-amber-400/50 transition-all flex flex-col justify-between group">
                     <div>
                         <div class="flex items-center justify-between mb-6">
@@ -345,7 +516,7 @@
                     </div>
                     <div class="space-y-3">
                         <div class="rounded-2xl overflow-hidden bg-slate-900 border border-slate-800">
-                            <iframe src="https://suno.com/embed/0d13fd63-75db-4e00-8d8d-c0796b8a2232" class="w-full h-36" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+                            <iframe title="새벽 세시의 발코니 음악 플레이어" src="https://suno.com/embed/0d13fd63-75db-4e00-8d8d-c0796b8a2232" class="w-full h-36" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
                         </div>
                         <a href="https://suno.com/song/0d13fd63-75db-4e00-8d8d-c0796b8a2232?sh=PODC8WwjPynsQnhg" target="_blank" rel="noopener noreferrer" class="w-full py-3 rounded-xl bg-slate-800 hover:bg-amber-400 hover:text-darkbg text-slate-200 font-bold text-xs transition-all flex items-center justify-center gap-2">
                             <i class="fa-solid fa-external-link"></i>
@@ -354,7 +525,6 @@
                     </div>
                 </div>
 
-                <!-- Track 3 -->
                 <div class="bg-cardbg rounded-3xl p-6 border border-slate-800 hover:border-accent/50 transition-all flex flex-col justify-between group">
                     <div>
                         <div class="flex items-center justify-between mb-6">
@@ -368,7 +538,7 @@
                     </div>
                     <div class="space-y-3">
                         <div class="rounded-2xl overflow-hidden bg-slate-900 border border-slate-800">
-                            <iframe src="https://suno.com/embed/30826266-d254-46cf-9dee-d688c2a2de6f" class="w-full h-36" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+                            <iframe title="불빛들이 안아주는 밤 음악 플레이어" src="https://suno.com/embed/30826266-d254-46cf-9dee-d688c2a2de6f" class="w-full h-36" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
                         </div>
                         <a href="https://suno.com/song/30826266-d254-46cf-9dee-d688c2a2de6f?sh=6QEAxLyeFjGoXqlO" target="_blank" rel="noopener noreferrer" class="w-full py-3 rounded-xl bg-slate-800 hover:bg-accent hover:text-white text-slate-200 font-bold text-xs transition-all flex items-center justify-center gap-2">
                             <i class="fa-solid fa-external-link"></i>
@@ -383,31 +553,29 @@
     <section id="guestbook" class="py-24 bg-darkbg border-t border-slate-800">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-2xl mx-auto mb-16" data-aos="fade-up">
-                <h2 class="text-primary font-bold text-sm tracking-widest uppercase mb-3">GUESTBOOK & NOTES</h2>
-                <p class="text-3xl sm:text-4xl font-black text-white">운동 소통 방명록</p>
-                <p class="text-slate-400 text-sm mt-2">방문 소감이나 추천 운동을 자유롭게 남겨주세요!</p>
+                <p aria-hidden="true" class="section-kicker font-bold text-xs tracking-[.2em] uppercase mb-3">GUESTBOOK & NOTES</p>
+                <h2 class="text-3xl sm:text-4xl font-black text-white">운동 소통 방명록</h2>
+                <p class="text-slate-400 text-sm mt-2">방문 소감이나 추천 운동을 남겨보세요. 작성한 내용은 이 기기에 저장됩니다.</p>
             </div>
 
-            <!-- Form -->
             <div class="bg-cardbg rounded-3xl p-8 sm:p-10 border border-slate-800 shadow-xl mb-12" data-aos="fade-up">
                 <form id="guestbook-form" onsubmit="addGuestMessage(event)" class="space-y-6">
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                         <div>
-                            <label class="block text-xs font-semibold text-slate-400 mb-2">닉네임</label>
-                            <input type="text" id="guest-name" required placeholder="예: 철봉러너" 
-                                class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-3 text-white placeholder-slate-600 focus:outline-none focus:border-primary">
+                            <label for="guest-name" class="block text-xs font-semibold text-slate-400 mb-2">닉네임</label>
+                            <input type="text" id="guest-name" required placeholder="예: 철봉러너" maxlength="24" autocomplete="nickname" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-3 text-white placeholder-slate-600 focus:outline-none focus:border-primary">
                         </div>
                         <div>
-                            <label class="block text-xs font-semibold text-slate-400 mb-2">관심 종목</label>
-                            <input type="text" id="guest-sport" required placeholder="예: 헬스, 러닝" 
-                                class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-3 text-white placeholder-slate-600 focus:outline-none focus:border-primary">
+                            <label for="guest-sport" class="block text-xs font-semibold text-slate-400 mb-2">관심 종목</label>
+                            <input type="text" id="guest-sport" required placeholder="예: 헬스, 러닝" maxlength="24" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-3 text-white placeholder-slate-600 focus:outline-none focus:border-primary">
                         </div>
                     </div>
+
                     <div>
-                        <label class="block text-xs font-semibold text-slate-400 mb-2">응원 메시지</label>
-                        <textarea id="guest-text" rows="3" required placeholder="홈페이지가 너무 멋져요! 같이 득근합시다." 
-                            class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-3 text-white placeholder-slate-600 focus:outline-none focus:border-primary"></textarea>
+                        <label for="guest-text" class="block text-xs font-semibold text-slate-400 mb-2">응원 메시지</label>
+                        <textarea id="guest-text" rows="3" maxlength="300" required placeholder="응원이나 추천 운동을 남겨주세요." class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-3 text-white placeholder-slate-600 focus:outline-none focus:border-primary"></textarea>
                     </div>
+
                     <button type="submit" class="w-full py-4 rounded-xl bg-primary hover:bg-emerald-600 text-darkbg font-bold transition-all shadow-lg shadow-primary/20 flex items-center justify-center gap-2">
                         <i class="fa-solid fa-paper-plane"></i>
                         <span>방명록 남기기</span>
@@ -415,17 +583,11 @@
                 </form>
             </div>
 
-            <!-- Comments List -->
-            <div id="comments-list" class="space-y-4" data-aos="fade-up">
-                <div class="bg-cardbg rounded-2xl p-6 border border-slate-800 flex items-start justify-between gap-4">
-                    <div>
-                        <div class="flex items-center gap-3 mb-2">
-                            <span class="font-bold text-white">러닝마니아</span>
-                            <span class="px-2.5 py-0.5 rounded-full bg-primary/10 text-primary text-xs font-semibold">러닝</span>
-                        </div>
-                        <p class="text-slate-300 text-sm">루틴 내용이 너무 알차네요! 저도 오늘 야간 러닝 뛰러 갑니다 ㅎㅎ</p>
-                    </div>
-                    <span class="text-xs text-slate-500">방금 전</span>
+            <div id="comments-list" class="space-y-4" aria-live="polite" data-aos="fade-up">
+                <div id="comments-empty" class="rounded-2xl border border-dashed border-slate-700 p-8 text-center text-slate-400">
+                    <i class="fa-regular fa-message text-2xl text-primary mb-3"></i>
+                    <p class="font-semibold text-slate-300">아직 방명록이 비어 있어요.</p>
+                    <p class="text-sm mt-1">첫 번째 응원 메시지를 남겨주세요.</p>
                 </div>
             </div>
         </div>
@@ -437,28 +599,42 @@
                 <div class="w-9 h-9 rounded-xl bg-primary flex items-center justify-center text-darkbg font-bold">
                     <i class="fa-solid fa-bolt"></i>
                 </div>
-                <span class="text-lg font-black text-white tracking-wider">VITA-PULSE</span>
+                <span class="text-lg font-black text-white tracking-wider">송태혁</span>
             </div>
-            <p class="text-xs text-slate-500">© 2026 VITA-PULSE Hobby Archive. All rights reserved. Built with Passion & Sweat.</p>
-            <div class="flex items-center gap-4 text-slate-400">
-                <a href="#" class="hover:text-primary transition-colors text-lg"><i class="fa-brands fa-instagram"></i></a>
-                <a href="#" class="hover:text-primary transition-colors text-lg"><i class="fa-brands fa-github"></i></a>
-                <a href="#" class="hover:text-primary transition-colors text-lg"><i class="fa-solid fa-envelope"></i></a>
-            </div>
+            <p class="text-xs text-slate-500">© 2026 송태혁의 운동 취미 아카이브</p>
+            <p class="text-xs font-semibold tracking-[.2em] text-slate-500">MOVE · GROW · REPEAT</p>
         </div>
     </footer>
 
     <script>
-        // Initialize AOS animations
-        AOS.init({ duration: 800, once: true });
+        function readStored(key, fallback) {
+            try {
+                const value = localStorage.getItem(key);
+                return value === null ? fallback : JSON.parse(value);
+            } catch (_) {
+                return fallback;
+            }
+        }
 
-        // Dynamic Quotes Array
+        function saveStored(key, value) {
+            try {
+                localStorage.setItem(key, JSON.stringify(value));
+            } catch (_) {
+                // 브라우저 저장 기능을 사용할 수 없으면 페이지 내에서만 동작합니다.
+            }
+        }
+
+        if (window.AOS) {
+            AOS.init({ duration: 700, once: true, offset: 40 });
+        }
+
         const quotes = [
-            "\"오늘 흘린 땀은 내일의 에너지가 된다.\"",
-            "\"운동은 단순한 취미가 아니라 삶의 태도이다.\"",
-            "\"포기하고 싶을 때가 바로 한 발자국 더 나아갈 때다.\"",
-            "\"어제보다 강해진 나를 만나는 유일한 방법.\""
+            '"오늘 흘린 땀은 내일의 에너지가 된다."',
+            '"운동은 단순한 취미가 아니라 삶의 태도이다."',
+            '"포기하고 싶을 때가 바로 한 발자국 더 나아갈 때다."',
+            '"어제보다 강해진 나를 만나는 유일한 방법."'
         ];
+
         let quoteIdx = 0;
         setInterval(() => {
             quoteIdx = (quoteIdx + 1) % quotes.length;
@@ -466,74 +642,83 @@
             if (quoteEl) quoteEl.innerText = quotes[quoteIdx];
         }, 5000);
 
-        // Step & Calorie Counter
-        function updateSteps(val) {
+        function updateSteps(val, shouldSave = true) {
             const steps = parseInt(val);
             document.getElementById('step-display').innerText = steps.toLocaleString() + ' 보';
+
             const calories = Math.round(steps * 0.06);
             document.getElementById('calorie-display').innerText = calories.toLocaleString() + ' kcal';
-            const percentage = Math.min(100, Math.round((steps / 20000) * 100));
-            document.getElementById('calorie-bar').style.width = percentage + '%';
+
+            const percentage = Math.min(100, Math.round((steps / 8000) * 100));
+            document.getElementById('step-progress-bar').style.width = percentage + '%';
+            document.querySelector('[role="progressbar"]').setAttribute('aria-valuenow', percentage);
+            document.getElementById('step-progress-label').innerText = `하루 목표의 ${percentage}%`;
+
+            if (shouldSave) saveStored('vitaSteps', steps);
         }
 
-        // Workout Routines Tab Data & Switcher
         const routinesData = {
             running: {
-                title: "러닝 & 페이스 트레이닝",
-                icon: "fa-person-running",
-                desc: "심폐 지구력을 강화하고 스트레스를 해소하는 도심 속 러닝 루틴.",
-                details: ["주 3회 정기 러닝 (화, 목, 토)", "목표 거리: 5km ~ 12km 주행", "주요 코스: 한강공원 및 트랙 주로"],
-                tip: "러닝 전후 충분한 동적 스트레칭과 종아리 폼롤러 마사지는 부상 방지의 핵심입니다."
+                title: '러닝 & 페이스 트레이닝',
+                icon: 'fa-person-running',
+                desc: '심폐 지구력을 강화하고 스트레스를 해소하는 도심 속 러닝 루틴.',
+                details: ['가벼운 워밍업 걷기 5~10분', '편안한 속도로 20~40분 달리기', '마무리 걷기와 하체 스트레칭'],
+                tip: '러닝 전후 충분한 동적 스트레칭과 종아리 폼롤러 마사지는 부상 방지의 핵심입니다.'
             },
             gym: {
-                title: "웨이트 트레이닝 (3분할 루틴)",
-                icon: "fa-dumbbell",
-                desc: "근비대와 스트렝스 향상을 위한 묵직한 웨이트 운동.",
-                details: ["DAY 1: 하체 및 코어 (스쿼트 중심)", "DAY 2: 상체 밀기 (벤치프레스, 오버헤드프레스)", "DAY 3: 상체 당기기 (데드리프트, 풀업)"],
-                tip: "자극을 느끼는 것도 중요하지만 점진적 과부하(Progressive Overload) 원칙을 잊지 마세요."
+                title: '웨이트 트레이닝 (3분할 루틴)',
+                icon: 'fa-dumbbell',
+                desc: '근비대와 스트렝스 향상을 위한 균형 잡힌 웨이트 운동.',
+                details: ['운동 전 가벼운 관절 준비운동', '하체·밀기·당기기 동작을 균형 있게 구성', '정확한 자세와 충분한 휴식 우선'],
+                tip: '무게를 올리기 전에 정확한 자세를 익히고, 운동 사이 충분히 회복하세요.'
             },
             climbing: {
-                title: "실내 클라이밍 (볼더링)",
-                icon: "fa-mountain",
-                desc: "전신 근력과 문제 해결 능력을 동시에 기르는 스릴 넘치는 스포츠.",
-                details: ["현재 레벨: V4 ~ V5 도전 중", "주요 세션: 지구력 문제 풀이 및 지구력 벽 타기", "필수 장비: 암벽화, 초크"],
-                tip: "손가락 관절 부상 방지를 위해 클라이밍 전 충분한 핑거 스트레칭은 필수입니다."
+                title: '실내 클라이밍 (볼더링)',
+                icon: 'fa-mountain',
+                desc: '전신 근력과 문제 해결 능력을 함께 기르는 스포츠.',
+                details: ['쉬운 문제로 충분히 몸 풀기', '발 디딤과 무게 중심 이동에 집중', '세션 사이 휴식과 손가락 회복 챙기기'],
+                tip: '손가락 관절 부상 방지를 위해 클라이밍 전 충분히 준비운동을 하세요.'
             },
             swimming: {
-                title: "수영 & 아쿠아 트레이닝",
-                icon: "fa-water",
-                desc: "관절에 무리 없이 전신 근육을 사용하는 유산소 수중 운동.",
-                details: ["주 2회 새벽 수영 강습", "영법: 자유형 및 배영 위주 지구력 수영", "목표: 1시간 동안 논스톱 2,000m 완주"],
-                tip: "호흡 리듬을 일정하게 유지하고 코어에 힘을 주는 것이 수영 속도 향상의 지름길입니다."
+                title: '수영 & 아쿠아 트레이닝',
+                icon: 'fa-water',
+                desc: '물의 저항을 활용해 전신을 움직이는 유산소 운동.',
+                details: ['입수 전 어깨와 발목 가동성 준비', '짧은 구간을 나누어 편안한 호흡 연습', '세션 마지막에는 천천히 쿨다운'],
+                tip: '호흡 리듬을 일정하게 유지하고 무리하지 않는 속도로 연습하세요.'
             },
             cycling: {
-                title: "사이클링 & 라이딩",
-                icon: "fa-bicycle",
-                desc: "하체 근력과 하체 지구력을 극대화하는 야외 라이딩.",
-                details: ["주말 장거리 라이딩 (40km ~ 80km)", "케이던스 유지 및 업힐 훈련", "필수 안전장비 착용 철저"],
-                tip: "라이딩 중 수분과 전해질 보충을 꾸준히 해주어야 근육 경련을 예방할 수 있습니다."
+                title: '사이클링 & 라이딩',
+                icon: 'fa-bicycle',
+                desc: '페이스 조절과 코스에 따른 전략이 중요한 야외 운동.',
+                details: ['출발 전 브레이크와 타이어 상태 확인', '편안한 기어와 일정한 페이스 유지', '헬멧 착용과 수분 보충 잊지 않기'],
+                tip: '안전 장비를 갖추고 라이딩 중에는 수분을 꾸준히 보충하세요.'
             }
         };
 
         function switchTab(tabKey) {
-            // Update button active styles
             document.querySelectorAll('.tab-btn').forEach(btn => {
                 btn.className = 'tab-btn px-6 py-3 rounded-2xl font-bold text-sm transition-all bg-slate-800 text-slate-300 hover:bg-slate-700';
+                btn.setAttribute('aria-selected', 'false');
+                btn.tabIndex = -1;
             });
+
             const activeBtn = document.getElementById(`btn-${tabKey}`);
             if (activeBtn) {
                 activeBtn.className = 'tab-btn px-6 py-3 rounded-2xl font-bold text-sm transition-all bg-primary text-darkbg shadow-lg shadow-primary/20';
+                activeBtn.setAttribute('aria-selected', 'true');
+                activeBtn.tabIndex = 0;
             }
 
-            // Render content
             const data = routinesData[tabKey];
             const container = document.getElementById('tab-content');
+            container.setAttribute('aria-labelledby', `btn-${tabKey}`);
+
             container.innerHTML = `
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
                     <div>
                         <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold mb-4">
                             <i class="fa-solid ${data.icon}"></i>
-                            <span>SPORT ROUTINE</span>
+                            <span>ROUTINE GUIDE</span>
                         </div>
                         <h3 class="text-2xl sm:text-3xl font-black text-white mb-4">${data.title}</h3>
                         <p class="text-slate-300 text-base mb-6 leading-relaxed">${data.desc}</p>
@@ -544,7 +729,7 @@
                     <div class="bg-slate-900/80 p-6 rounded-2xl border border-slate-800">
                         <div class="flex items-center gap-3 text-amber-400 font-bold mb-3">
                             <i class="fa-solid fa-lightbulb"></i>
-                            <span>프로의 운동 꿀팁</span>
+                            <span>꾸준히 이어가는 팁</span>
                         </div>
                         <p class="text-slate-300 text-sm leading-relaxed">${data.tip}</p>
                     </div>
@@ -552,77 +737,184 @@
             `;
         }
 
-        // Initialize default tab
+        function moveRoutineTab(event) {
+            const tabs = Array.from(document.querySelectorAll('.tab-btn'));
+            const currentIndex = tabs.indexOf(event.currentTarget);
+            let nextIndex = currentIndex;
+
+            if (event.key === 'ArrowRight') nextIndex = (currentIndex + 1) % tabs.length;
+            else if (event.key === 'ArrowLeft') nextIndex = (currentIndex - 1 + tabs.length) % tabs.length;
+            else if (event.key === 'Home') nextIndex = 0;
+            else if (event.key === 'End') nextIndex = tabs.length - 1;
+            else return;
+
+            event.preventDefault();
+            const nextTab = tabs[nextIndex];
+            switchTab(nextTab.dataset.tab);
+            nextTab.focus();
+        }
+
         switchTab('running');
 
-        // Gallery Filter
-        function filterGallery(category) {
+        function filterGallery(category, activeButton) {
             document.querySelectorAll('.filter-pill').forEach(btn => {
                 btn.className = 'px-4 py-2 rounded-xl bg-slate-800 text-slate-300 text-xs font-bold filter-pill hover:bg-slate-700';
+                btn.setAttribute('aria-pressed', 'false');
             });
-            event.target.className = 'px-4 py-2 rounded-xl bg-primary text-darkbg text-xs font-bold filter-pill';
+
+            if (activeButton) {
+                activeButton.className = 'px-4 py-2 rounded-xl bg-primary text-darkbg text-xs font-bold filter-pill';
+                activeButton.setAttribute('aria-pressed', 'true');
+            }
 
             document.querySelectorAll('.gallery-item').forEach(item => {
-                if (category === 'all' || item.getAttribute('data-category') === category) {
-                    item.style.display = 'block';
-                } else {
-                    item.style.display = 'none';
-                }
+                item.style.display =
+                    category === 'all' || item.getAttribute('data-category') === category
+                        ? 'block'
+                        : 'none';
             });
         }
 
-        // Weekly Tracker Updater
-        function updateTracker() {
+        function updateTracker(shouldSave = true) {
             const checkboxes = document.querySelectorAll('#tracker input[type="checkbox"]');
             let checked = 0;
-            checkboxes.forEach(cb => { if (cb.checked) checked++; });
+
+            checkboxes.forEach(checkbox => {
+                if (checkbox.checked) checked++;
+            });
+
             document.getElementById('tracker-count').innerText = checked;
             const percent = Math.round((checked / checkboxes.length) * 100);
             document.getElementById('tracker-percent').innerText = percent + '%';
-        }
+            document.getElementById('hero-week-count').innerText = checked;
 
-        // Guestbook Message Adder
-        function addGuestMessage(e) {
-            e.preventDefault();
-            const name = document.getElementById('guest-name').value;
-            const sport = document.getElementById('guest-sport').value;
-            const text = document.getElementById('guest-text').value;
-
-            const list = document.getElementById('comments-list');
-            const card = document.createElement('div');
-            card.className = 'bg-cardbg rounded-2xl p-6 border border-slate-800 flex items-start justify-between gap-4 animate-fade-in';
-            card.innerHTML = `
-                <div>
-                    <div class="flex items-center gap-3 mb-2">
-                        <span class="font-bold text-white">${escapeHtml(name)}</span>
-                        <span class="px-2.5 py-0.5 rounded-full bg-primary/10 text-primary text-xs font-semibold">${escapeHtml(sport)}</span>
-                    </div>
-                    <p class="text-slate-300 text-sm">${escapeHtml(text)}</p>
-                </div>
-                <span class="text-xs text-slate-500">방금 전</span>
-            `;
-            list.insertBefore(card, list.firstChild);
-            document.getElementById('guestbook-form').reset();
-        }
-
-        // Dark/Light Mode Toggle
-        function toggleDarkMode() {
-            const html = document.documentElement;
-            const icon = document.getElementById('theme-icon');
-            if (html.classList.contains('dark')) {
-                html.classList.remove('dark');
-                icon.className = 'fa-solid fa-moon';
-            } else {
-                html.classList.add('dark');
-                icon.className = 'fa-solid fa-sun';
+            if (shouldSave) {
+                saveStored('vitaWorkoutDays', Array.from(checkboxes, checkbox => checkbox.checked));
             }
         }
 
-        // HTML Escape utility
-        function escapeHtml(text) {
-            const map = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' };
-            return text.replace(/[&<>"']/g, function(m) { return map[m]; });
+        function addGuestMessage(event) {
+            event.preventDefault();
+
+            const entry = {
+                name: document.getElementById('guest-name').value.trim(),
+                sport: document.getElementById('guest-sport').value.trim(),
+                text: document.getElementById('guest-text').value.trim(),
+                createdAt: new Date().toISOString()
+            };
+
+            if (!entry.name || !entry.sport || !entry.text) return;
+
+            renderGuestMessage(entry, true);
+            const entries = readStored('vitaGuestbook', []);
+            saveStored('vitaGuestbook', [entry, ...(Array.isArray(entries) ? entries : [])].slice(0, 30));
+            document.getElementById('guestbook-form').reset();
         }
+
+        function renderGuestMessage(entry, isNew = false) {
+            document.getElementById('comments-empty')?.remove();
+
+            const card = document.createElement('article');
+            card.className = 'bg-cardbg rounded-2xl p-6 border border-slate-800 flex items-start justify-between gap-4';
+
+            const content = document.createElement('div');
+            const heading = document.createElement('div');
+            heading.className = 'flex flex-wrap items-center gap-3 mb-2';
+
+            const name = document.createElement('span');
+            name.className = 'font-bold text-white';
+            name.textContent = entry.name;
+
+            const sport = document.createElement('span');
+            sport.className = 'px-2.5 py-0.5 rounded-full bg-primary/10 text-primary text-xs font-semibold';
+            sport.textContent = entry.sport;
+
+            const message = document.createElement('p');
+            message.className = 'text-slate-300 text-sm whitespace-pre-wrap break-words';
+            message.textContent = entry.text;
+
+            const date = document.createElement('span');
+            date.className = 'text-xs text-slate-500 shrink-0';
+            date.textContent = isNew ? '방금 전' : new Date(entry.createdAt).toLocaleDateString('ko-KR');
+
+            heading.append(name, sport);
+            content.append(heading, message);
+            card.append(content, date);
+            document.getElementById('comments-list').prepend(card);
+        }
+
+        function toggleDarkMode() {
+            const html = document.documentElement;
+            const icon = document.getElementById('theme-icon');
+            const isLight = html.dataset.theme !== 'light';
+
+            if (isLight) {
+                html.classList.remove('dark');
+                html.dataset.theme = 'light';
+                icon.className = 'fa-solid fa-moon';
+            } else {
+                html.classList.add('dark');
+                html.dataset.theme = 'dark';
+                icon.className = 'fa-solid fa-sun';
+            }
+
+            saveStored('vitaTheme', html.dataset.theme);
+        }
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const button = document.getElementById('mobile-menu-button');
+            const isOpen = !menu.hidden;
+
+            menu.hidden = isOpen;
+            button.setAttribute('aria-expanded', String(!isOpen));
+            button.setAttribute('aria-label', isOpen ? '메뉴 열기' : '메뉴 닫기');
+            document.getElementById('mobile-menu-icon').className = isOpen ? 'fa-solid fa-bars' : 'fa-solid fa-xmark';
+        }
+
+        function closeMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const button = document.getElementById('mobile-menu-button');
+
+            menu.hidden = true;
+            button.setAttribute('aria-expanded', 'false');
+            button.setAttribute('aria-label', '메뉴 열기');
+            document.getElementById('mobile-menu-icon').className = 'fa-solid fa-bars';
+        }
+
+        function restoreSavedState() {
+            const theme = readStored('vitaTheme', 'dark') === 'light' ? 'light' : 'dark';
+            document.documentElement.dataset.theme = theme;
+            document.getElementById('theme-icon').className = theme === 'dark' ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+
+            const savedSteps = Number(readStored('vitaSteps', 0));
+            const slider = document.getElementById('step-slider');
+            slider.value = Number.isFinite(savedSteps) ? Math.max(0, Math.min(30000, savedSteps)) : 0;
+            updateSteps(slider.value, false);
+
+            const savedDays = readStored('vitaWorkoutDays', []);
+            const checkboxes = document.querySelectorAll('#tracker input[type="checkbox"]');
+            checkboxes.forEach((checkbox, index) => {
+                checkbox.checked = Array.isArray(savedDays) && savedDays[index] === true;
+            });
+            updateTracker(false);
+
+            const savedMessages = readStored('vitaGuestbook', []);
+            if (Array.isArray(savedMessages)) {
+                savedMessages.slice(0, 30).reverse().forEach(entry => {
+                    if (
+                        entry &&
+                        typeof entry.name === 'string' &&
+                        typeof entry.sport === 'string' &&
+                        typeof entry.text === 'string'
+                    ) {
+                        renderGuestMessage(entry);
+                    }
+                });
+            }
+        }
+
+        restoreSavedState();
     </script>
 </body>
 </html>
