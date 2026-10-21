@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>송태혁의 운동 라이프 | 운동 소개 & 기록</title>
-    <meta name="description" content="러닝, 웨이트 트레이닝, 클라이밍, 수영, 사이클을 즐기는 송태혁의 운동 라이프와 주간 운동 기록을 소개합니다.">
+    <meta name="description" content="러닝과 웨이트 트레이닝을 즐기는 송태혁의 운동 라이프와 주간 운동 기록을 소개합니다.">
     <meta name="theme-color" content="#07111f">
     <meta property="og:title" content="송태혁의 운동 라이프">
     <meta property="og:description" content="움직이고, 기록하고, 어제보다 성장하는 운동 이야기">
@@ -99,6 +99,86 @@
 
         .mobile-menu[hidden] {
             display: none !important;
+        }
+
+        /* Polished visual system */
+        html {
+            scroll-padding-top: 5.5rem;
+            scrollbar-color: #365044 #07111f;
+        }
+
+        body {
+            background-image: radial-gradient(ellipse at 50% -20%, rgba(16, 185, 129, .08), transparent 42%);
+        }
+
+        header {
+            box-shadow: 0 10px 35px rgba(0, 0, 0, .12);
+        }
+
+        .hero-gradient {
+            background:
+                radial-gradient(ellipse at 80% 18%, rgba(163, 245, 122, .17), transparent 32%),
+                radial-gradient(ellipse at 8% 70%, rgba(56, 189, 248, .13), transparent 35%),
+                linear-gradient(135deg, #07111f 0%, #0b1b2c 52%, #08121e 100%);
+        }
+
+        .glass-panel {
+            box-shadow: 0 28px 80px rgba(0, 0, 0, .28), inset 0 1px 0 rgba(255, 255, 255, .05);
+        }
+
+        .gallery-item {
+            overflow: hidden;
+            border-radius: 1.25rem;
+            background: #101d2d;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, .16);
+        }
+
+        .gallery-item img {
+            transition: transform .55s cubic-bezier(.2, .7, .2, 1), filter .35s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.055);
+            filter: saturate(1.08);
+        }
+
+        .tab-btn,
+        .filter-pill,
+        #tracker label,
+        #guestbook-form input,
+        #guestbook-form textarea {
+            transition: background-color .2s ease, border-color .2s ease, color .2s ease, transform .2s ease, box-shadow .2s ease;
+        }
+
+        .tab-btn:hover,
+        .filter-pill:hover {
+            transform: translateY(-2px);
+        }
+
+        #guestbook-form input:focus,
+        #guestbook-form textarea:focus {
+            border-color: rgba(163, 245, 122, .7);
+            box-shadow: 0 0 0 4px rgba(163, 245, 122, .1);
+        }
+
+        html[data-theme="light"] {
+            scrollbar-color: #8bb8a0 #e7f0eb;
+        }
+
+        html[data-theme="light"] body {
+            background-image: radial-gradient(ellipse at 50% -20%, rgba(16, 185, 129, .11), transparent 44%);
+        }
+
+        html[data-theme="light"] .gallery-item {
+            box-shadow: 0 12px 30px rgba(27, 57, 43, .1);
+        }
+
+        @media (max-width: 767px) {
+            .hero-gradient {
+                background:
+                    radial-gradient(ellipse at 80% 10%, rgba(163, 245, 122, .15), transparent 36%),
+                    linear-gradient(155deg, #07111f, #0b1b2c 60%, #08121e);
+            }
         }
 
         @media (prefers-reduced-motion: reduce) {
@@ -211,9 +291,11 @@
                 </span>
             </a>
 
-            <nav aria-label="주요 메뉴" class="hidden md:flex items-center gap-7 text-sm font-medium text-slate-300">
+            <nav aria-label="주요 메뉴" class="hidden md:flex items-center gap-5 text-sm font-medium text-slate-300">
                 <a href="#hero" class="hover:text-primary transition-colors">홈</a>
+                <a href="#about" class="hover:text-primary transition-colors">자기소개</a>
                 <a href="#routines" class="hover:text-primary transition-colors">운동 루틴</a>
+                <a href="#goal-plans" class="hover:text-primary transition-colors">목표별 계획</a>
                 <a href="#gallery" class="hover:text-primary transition-colors">활동 갤러리</a>
                 <a href="#tracker" class="hover:text-primary transition-colors">주간 트래커</a>
                 <a href="#playlist" class="hover:text-primary transition-colors">운동 BGM</a>
@@ -238,7 +320,9 @@
 
         <nav id="mobile-menu" class="mobile-menu md:hidden mx-4 mb-3 space-y-1" aria-label="모바일 메뉴" hidden>
             <a href="#hero" onclick="closeMobileMenu()" class="block rounded-lg px-4 py-3 text-sm font-semibold text-slate-200 hover:bg-slate-800">홈</a>
+            <a href="#about" onclick="closeMobileMenu()" class="block rounded-lg px-4 py-3 text-sm font-semibold text-slate-200 hover:bg-slate-800">자기소개</a>
             <a href="#routines" onclick="closeMobileMenu()" class="block rounded-lg px-4 py-3 text-sm font-semibold text-slate-200 hover:bg-slate-800">운동 루틴</a>
+            <a href="#goal-plans" onclick="closeMobileMenu()" class="block rounded-lg px-4 py-3 text-sm font-semibold text-slate-200 hover:bg-slate-800">목표별 계획</a>
             <a href="#gallery" onclick="closeMobileMenu()" class="block rounded-lg px-4 py-3 text-sm font-semibold text-slate-200 hover:bg-slate-800">활동 갤러리</a>
             <a href="#tracker" onclick="closeMobileMenu()" class="block rounded-lg px-4 py-3 text-sm font-semibold text-slate-200 hover:bg-slate-800">주간 트래커</a>
             <a href="#playlist" onclick="closeMobileMenu()" class="block rounded-lg px-4 py-3 text-sm font-semibold text-slate-200 hover:bg-slate-800">운동 BGM</a>
@@ -265,7 +349,7 @@
 
                 <p class="text-slate-300 text-lg sm:text-xl mb-8 leading-relaxed max-w-xl">
                     움직이고, 기록하고, 어제보다 성장하는 시간.<br class="hidden sm:block">
-                    다양한 운동과 루틴을 통해 만들어가는 건강한 일상을 소개합니다.
+                    러닝과 웨이트 트레이닝으로 만들어가는 건강한 일상을 소개합니다.
                 </p>
 
                 <div class="flex flex-wrap gap-4">
@@ -335,12 +419,50 @@
         </div>
     </section>
 
+    <section id="about" class="py-24 bg-darkbg border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-14" data-aos="fade-up">
+                <p class="section-kicker font-bold text-xs tracking-[.2em] uppercase mb-3">ABOUT ME</p>
+                <h2 class="text-3xl sm:text-4xl font-black text-white">운동으로 성장하는 송태혁</h2>
+                <p class="text-slate-400 text-base mt-4 leading-relaxed">안녕하세요. 운동을 즐기며 꾸준히 도전하고, 그 과정에서 얻은 에너지를 일상으로 이어가는 대학생 송태혁입니다.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-5 gap-6 items-stretch">
+                <article class="lg:col-span-2 glass-panel rounded-3xl p-7 sm:p-9 border" data-aos="fade-right">
+                    <div class="w-14 h-14 rounded-2xl bg-primary/10 text-primary flex items-center justify-center text-2xl mb-6"><i class="fa-solid fa-user"></i></div>
+                    <p class="text-xs font-bold tracking-[.18em] text-primary mb-2">PROFILE</p>
+                    <h3 class="text-2xl font-black text-white mb-6">반갑습니다, 송태혁입니다.</h3>
+                    <dl class="space-y-4 text-sm">
+                        <div class="flex justify-between gap-4 border-b border-slate-700/70 pb-3"><dt class="text-slate-500">현재</dt><dd class="text-slate-200 font-semibold">대학생</dd></div>
+                        <div class="flex justify-between gap-4 border-b border-slate-700/70 pb-3"><dt class="text-slate-500">관심 운동</dt><dd class="text-slate-200 font-semibold text-right">러닝 · 웨이트</dd></div>
+                        <div class="flex justify-between gap-4"><dt class="text-slate-500">나의 키워드</dt><dd class="text-slate-200 font-semibold">꾸준함 · 도전 · 성장</dd></div>
+                    </dl>
+                </article>
+
+                <article class="lg:col-span-3 rounded-3xl p-7 sm:p-9 border border-slate-800 bg-slate-900/60 relative overflow-hidden" data-aos="fade-left">
+                    <div class="absolute -right-12 -top-12 w-48 h-48 rounded-full bg-primary/10 blur-3xl pointer-events-none"></div>
+                    <div class="relative">
+                        <div class="w-14 h-14 rounded-2xl bg-cyan-400/10 text-cyan-300 flex items-center justify-center text-2xl mb-6"><i class="fa-solid fa-heart-pulse"></i></div>
+                        <p class="text-xs font-bold tracking-[.18em] text-cyan-300 mb-2">WHY I MOVE</p>
+                        <h3 class="text-2xl font-black text-white mb-4">운동을 시작한 계기와 동기</h3>
+                        <p class="text-slate-300 leading-8">러닝과 웨이트 트레이닝을 꾸준히 이어가며 몸과 마음이 함께 성장하는 즐거움을 느끼고 있습니다. 러닝으로 체력과 페이스를 다지고, 웨이트로 부위별 목표를 세워 실천합니다. 작은 기록이 쌓여 눈에 보이는 변화가 되는 과정이 운동을 계속하게 하는 동기입니다.</p>
+                        <div class="flex flex-wrap gap-2 mt-7" aria-label="운동을 통해 중요하게 생각하는 가치">
+                            <span class="px-3 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-bold">꾸준한 실천</span>
+                            <span class="px-3 py-1.5 rounded-full bg-cyan-400/10 text-cyan-300 text-xs font-bold">새로운 도전</span>
+                            <span class="px-3 py-1.5 rounded-full bg-amber-400/10 text-amber-300 text-xs font-bold">작은 성취</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
     <section id="routines" class="py-24 bg-slate-900/50 border-t border-slate-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-2xl mx-auto mb-16" data-aos="fade-up">
                 <p aria-hidden="true" class="section-kicker font-bold text-xs tracking-[.2em] uppercase mb-3">MOVE WITH PURPOSE</p>
-                <h2 class="text-3xl sm:text-4xl font-black text-white">종목별 루틴과 실천 팁</h2>
-                <p class="text-slate-400 text-sm mt-3">아래 내용은 운동을 시작할 때 참고할 수 있는 루틴 예시입니다.</p>
+                <h2 class="text-3xl sm:text-4xl font-black text-white">러닝·웨이트 루틴과 실천 팁</h2>
+                <p class="text-slate-400 text-sm mt-3">제가 즐기는 두 가지 운동의 루틴과 실천 팁을 소개합니다.</p>
             </div>
 
             <div class="flex flex-wrap justify-center gap-3 mb-12" role="tablist" aria-label="운동 종목 선택" data-aos="fade-up">
@@ -350,19 +472,62 @@
                 <button type="button" role="tab" tabindex="-1" data-tab="gym" aria-selected="false" aria-controls="tab-content" onkeydown="moveRoutineTab(event)" onclick="switchTab('gym')" id="btn-gym" class="tab-btn px-6 py-3 rounded-2xl font-bold text-sm transition-all bg-slate-800 text-slate-300 hover:bg-slate-700">
                     <i class="fa-solid fa-dumbbell mr-2"></i> 헬스
                 </button>
-                <button type="button" role="tab" tabindex="-1" data-tab="climbing" aria-selected="false" aria-controls="tab-content" onkeydown="moveRoutineTab(event)" onclick="switchTab('climbing')" id="btn-climbing" class="tab-btn px-6 py-3 rounded-2xl font-bold text-sm transition-all bg-slate-800 text-slate-300 hover:bg-slate-700">
-                    <i class="fa-solid fa-mountain mr-2"></i> 클라이밍
-                </button>
-                <button type="button" role="tab" tabindex="-1" data-tab="swimming" aria-selected="false" aria-controls="tab-content" onkeydown="moveRoutineTab(event)" onclick="switchTab('swimming')" id="btn-swimming" class="tab-btn px-6 py-3 rounded-2xl font-bold text-sm transition-all bg-slate-800 text-slate-300 hover:bg-slate-700">
-                    <i class="fa-solid fa-water mr-2"></i> 수영
-                </button>
-                <button type="button" role="tab" tabindex="-1" data-tab="cycling" aria-selected="false" aria-controls="tab-content" onkeydown="moveRoutineTab(event)" onclick="switchTab('cycling')" id="btn-cycling" class="tab-btn px-6 py-3 rounded-2xl font-bold text-sm transition-all bg-slate-800 text-slate-300 hover:bg-slate-700">
-                    <i class="fa-solid fa-bicycle mr-2"></i> 사이클
-                </button>
             </div>
 
             <div id="tab-content" role="tabpanel" tabindex="0" class="bg-cardbg rounded-3xl p-8 sm:p-12 border border-slate-800 shadow-2xl" data-aos="fade-up">
                 <!-- 운동 루틴 내용은 JavaScript로 표시됩니다. -->
+            </div>
+        </div>
+    </section>
+
+    <section id="goal-plans" class="py-24 bg-darkbg border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12" data-aos="fade-up">
+                <p class="section-kicker font-bold text-xs tracking-[.2em] uppercase mb-3">WEEKLY GOAL PLANS</p>
+                <h2 class="text-3xl sm:text-4xl font-black text-white">목표에 맞춘 1주일 운동·식단 예시</h2>
+                <p class="text-slate-400 text-sm sm:text-base mt-4 leading-relaxed">체형을 구분하기보다 원하는 변화에 맞춰 참고할 수 있는 주간 예시입니다. 운동 경험과 생활 패턴에 맞게 횟수와 양을 조절해 주세요.</p>
+            </div>
+
+            <div class="flex flex-wrap justify-center gap-3 mb-8" role="tablist" aria-label="운동 목표 선택">
+                <button type="button" role="tab" id="goal-tab-gain" aria-selected="true" aria-controls="goal-plan-panel" tabindex="0" onclick="switchGoalPlan('gain')" onkeydown="moveGoalPlanTab(event)" class="goal-tab px-5 py-3 rounded-xl bg-primary text-darkbg font-bold text-sm">근육량 늘리기</button>
+                <button type="button" role="tab" id="goal-tab-fat-loss" aria-selected="false" aria-controls="goal-plan-panel" tabindex="-1" onclick="switchGoalPlan('fatLoss')" onkeydown="moveGoalPlanTab(event)" class="goal-tab px-5 py-3 rounded-xl bg-slate-800 text-slate-300 font-bold text-sm hover:bg-slate-700">체지방 감량</button>
+            </div>
+
+            <div id="goal-plan-panel" role="tabpanel" aria-labelledby="goal-tab-gain" tabindex="0" class="grid grid-cols-1 lg:grid-cols-2 gap-6" data-aos="fade-up">
+                <!-- 선택한 목표의 주간 운동·식단 계획을 JavaScript로 표시합니다. -->
+            </div>
+
+            <div class="max-w-5xl mx-auto mt-7 p-5 rounded-2xl bg-slate-900/70 border border-slate-800 text-sm text-slate-400 leading-relaxed">
+                <p><i class="fa-solid fa-circle-info text-primary mr-2"></i>아래 계획은 건강한 성인을 위한 일반적인 예시이며 개인별 식단 처방이 아닙니다. 무리한 식사 제한은 피하고, 운동은 쉬운 강도와 적은 양부터 시작해 점진적으로 늘려 보세요. 성인은 주당 중강도 유산소 활동 150~300분과 주 2일 이상의 근력 운동을 목표로 할 수 있습니다. <a href="https://odphp.health.gov/our-work/nutrition-physical-activity/physical-activity-guidelines/about-physical-activity-guidelines/questions-answers" target="_blank" rel="noopener noreferrer" class="text-primary underline underline-offset-4">신체활동 가이드라인</a></p>
+            </div>
+
+            <div class="max-w-5xl mx-auto mt-12 bg-cardbg rounded-3xl p-6 sm:p-9 border border-slate-800 shadow-xl" data-aos="fade-up">
+                <div class="grid grid-cols-1 lg:grid-cols-5 gap-8 items-center">
+                    <div class="lg:col-span-2">
+                        <p class="text-xs font-bold tracking-[.18em] text-cyan-300 mb-2">PERSONAL STARTING POINT</p>
+                        <h3 class="text-2xl font-black text-white">키와 몸무게로 운동 방향 보기</h3>
+                        <p class="text-sm text-slate-400 mt-3 leading-relaxed">성인 BMI를 참고해 러닝과 웨이트의 시작 방향을 제안합니다. 운동 경험과 관절·건강 상태에 맞춰 조절해 주세요.</p>
+                    </div>
+                    <form class="lg:col-span-3" onsubmit="recommendExercise(event)">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <label class="block text-sm font-semibold text-slate-300">키
+                                <span class="relative mt-2 block"><input id="recommend-height" type="number" min="100" max="250" step="0.1" required inputmode="decimal" placeholder="예: 170" class="w-full rounded-xl bg-slate-900 border border-slate-700 px-4 py-3 pr-12 text-white placeholder:text-slate-600"><span class="absolute right-4 top-1/2 -translate-y-1/2 text-xs text-slate-500">cm</span></span>
+                            </label>
+                            <label class="block text-sm font-semibold text-slate-300">몸무게
+                                <span class="relative mt-2 block"><input id="recommend-weight" type="number" min="25" max="300" step="0.1" required inputmode="decimal" placeholder="예: 65" class="w-full rounded-xl bg-slate-900 border border-slate-700 px-4 py-3 pr-12 text-white placeholder:text-slate-600"><span class="absolute right-4 top-1/2 -translate-y-1/2 text-xs text-slate-500">kg</span></span>
+                            </label>
+                        </div>
+                        <button type="submit" class="w-full mt-4 px-5 py-3 rounded-xl bg-primary hover:bg-lime-300 text-darkbg font-extrabold transition-colors"><i class="fa-solid fa-wand-magic-sparkles mr-2"></i>운동 방향 추천받기</button>
+                        <p class="text-[11px] text-slate-500 mt-3">입력값은 이 기기에 저장하거나 전송하지 않습니다. 성인(만 20세 이상) 참고용이에요.</p>
+                    </form>
+                </div>
+
+                <div id="exercise-recommendation" class="mt-6 p-5 rounded-2xl bg-slate-900/70 border border-slate-800" role="status" aria-live="polite" hidden>
+                    <p id="recommendation-bmi" class="text-xs font-bold tracking-wider text-primary"></p>
+                    <h4 id="recommendation-title" class="text-lg font-extrabold text-white mt-2"></h4>
+                    <p id="recommendation-text" class="text-sm text-slate-300 leading-relaxed mt-2"></p>
+                </div>
+                <p class="text-[11px] text-slate-500 mt-4 leading-relaxed">BMI는 키와 몸무게만으로 계산하는 선별 지표로 근육량과 체지방을 구분하지 않으며, 운동 처방이나 진단이 아닙니다. 만 20세 미만은 성장기 기준을 사용해야 하므로 이 추천을 적용하지 마세요. 통증이나 기존 건강 문제가 있다면 의료 전문가와 먼저 상의하세요. <a href="https://health.kdca.go.kr/healthinfo/biz/health/gnrlzHealthInfo/gnrlzHealthInfo/gnrlzHealthInfoView.do?cntnts_sn=6694" target="_blank" rel="noopener noreferrer" class="text-primary underline underline-offset-4">질병관리청 BMI 안내</a></p>
             </div>
         </div>
     </section>
@@ -375,13 +540,12 @@
                 <div class="flex flex-wrap justify-center gap-2 mt-6">
                     <button type="button" aria-pressed="true" onclick="filterGallery('all', this)" class="px-4 py-2 rounded-xl bg-primary text-darkbg text-xs font-bold filter-pill">전체</button>
                     <button type="button" aria-pressed="false" onclick="filterGallery('running', this)" class="px-4 py-2 rounded-xl bg-slate-800 text-slate-300 text-xs font-bold filter-pill hover:bg-slate-700">러닝</button>
-                    <button type="button" aria-pressed="false" onclick="filterGallery('gym', this)" class="px-4 py-2 rounded-xl bg-slate-800 text-slate-300 text-xs font-bold filter-pill hover:bg-slate-700">헬스</button>
-                    <button type="button" aria-pressed="false" onclick="filterGallery('climbing', this)" class="px-4 py-2 rounded-xl bg-slate-800 text-slate-300 text-xs font-bold filter-pill hover:bg-slate-700">클라이밍</button>
+                    <button type="button" aria-pressed="false" onclick="filterGallery('gym', this)" class="px-4 py-2 rounded-xl bg-slate-800 text-slate-300 text-xs font-bold filter-pill hover:bg-slate-700">웨이트</button>
                 </div>
-                <p class="text-xs text-slate-500 mt-5">갤러리 이미지는 운동 종목을 소개하기 위한 예시 사진입니다.</p>
+                <p class="text-xs text-slate-500 mt-5">러닝과 웨이트를 즐기는 순간을 담은 갤러리입니다.</p>
             </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="gallery-grid">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-5xl mx-auto" id="gallery-grid">
                 <div data-aos="zoom-in" data-category="running" class="gallery-item relative group aspect-video sm:aspect-square rounded-3xl overflow-hidden border border-slate-800">
                     <img loading="lazy" src="https://images.unsplash.com/photo-1552674605-db6ffd4facb5?q=80&w=800&auto=format&fit=crop" onerror="this.src='https://placehold.co/600x600/131C31/10B981?text=Running'" alt="아침 도로를 달리는 러너" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                     <div class="gallery-caption absolute inset-0 bg-gradient-to-t from-darkbg/90 via-darkbg/20 to-transparent flex flex-col justify-end p-6">
@@ -398,13 +562,6 @@
                     </div>
                 </div>
 
-                <div data-aos="zoom-in" data-category="climbing" class="gallery-item relative group aspect-video sm:aspect-square rounded-3xl overflow-hidden border border-slate-800">
-                    <img loading="lazy" src="https://images.unsplash.com/photo-1566793671569-4256c0757d23?q=80&w=800&auto=format&fit=crop" onerror="this.src='https://placehold.co/600x600/131C31/10B981?text=Climbing'" alt="실내 암벽을 오르는 클라이머" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                    <div class="gallery-caption absolute inset-0 bg-gradient-to-t from-darkbg/90 via-darkbg/20 to-transparent flex flex-col justify-end p-6">
-                        <span class="text-primary text-xs font-semibold uppercase tracking-wider mb-1">Climbing</span>
-                        <h3 class="text-white font-bold text-lg">집중력과 균형을 기르는 클라이밍</h3>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -412,61 +569,67 @@
     <section id="tracker" class="py-24 bg-slate-900/50 border-t border-slate-800">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-2xl mx-auto mb-16" data-aos="fade-up">
-                <p aria-hidden="true" class="section-kicker font-bold text-xs tracking-[.2em] uppercase mb-3">WEEKLY HABIT TRACKER</p>
-                <h2 class="text-3xl sm:text-4xl font-black text-white">주간 운동 습관 트래커</h2>
-                <p class="text-slate-400 text-sm mt-2">운동한 날을 체크하면 이번 주 실천 현황이 이 기기에 저장됩니다.</p>
+                <p aria-hidden="true" class="section-kicker font-bold text-xs tracking-[.2em] uppercase mb-3">MY FITNESS ROUTINE</p>
+                <h2 class="text-3xl sm:text-4xl font-black text-white">제가 즐기는 웨이트 루틴</h2>
+                <p class="text-slate-400 text-sm mt-2">가슴·등·하체·어깨·팔로 나누어 운동하는 저의 주간 계획을 소개합니다. 요일별 부위와 완료 여부를 직접 바꿔 볼 수 있어요.</p>
             </div>
 
             <div class="bg-cardbg rounded-3xl p-8 sm:p-10 border border-slate-800 shadow-xl" data-aos="fade-up">
                 <div class="flex items-center justify-between mb-8 pb-6 border-b border-slate-800">
                     <div>
-                        <span class="text-xs text-slate-400 uppercase font-bold tracking-wider">이번 주 성취도</span>
-                        <h3 class="text-2xl font-black text-white mt-1" aria-live="polite"><span id="tracker-count">0</span> / 7일 완료</h3>
+                        <span class="text-xs text-slate-400 uppercase font-bold tracking-wider">주간 루틴 체험</span>
+                        <h3 class="text-2xl font-black text-white mt-1" aria-live="polite"><span id="tracker-count">0</span> / 7일 기록</h3>
                     </div>
                     <div class="w-16 h-16 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary font-black text-xl" id="tracker-percent">0%</div>
                 </div>
 
-                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-7 gap-4 mb-8">
-                    <label class="flex flex-col items-center justify-center p-4 rounded-2xl bg-slate-900/80 border border-slate-800 cursor-pointer hover:border-primary/50 transition-all">
+                <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-3 mb-8">
+                    <label class="flex flex-col items-center p-3 rounded-2xl bg-slate-900/80 border border-slate-800 hover:border-primary/50 transition-all">
                         <span class="text-xs font-semibold text-slate-400 mb-2">월요일</span>
-                        <input type="checkbox" data-day="monday" onchange="updateTracker()" class="w-6 h-6 accent-primary rounded cursor-pointer mb-2" aria-label="월요일 운동 완료">
-                        <span class="text-xs font-bold text-emerald-400">러닝</span>
+                        <select data-split-day="monday" onchange="updateTracker()" aria-label="월요일 웨이트 부위" class="w-full mb-3 rounded-lg bg-slate-800 border border-slate-700 px-2 py-2 text-xs text-slate-200"><option>가슴</option><option>등</option><option>하체</option><option>어깨</option><option>팔</option><option>전신</option><option>휴식·회복</option></select>
+                        <input type="checkbox" data-day="monday" onchange="updateTracker()" class="w-6 h-6 accent-primary rounded cursor-pointer" aria-label="월요일 운동 또는 회복 완료">
+                        <span class="text-[11px] text-slate-500 mt-2">완료</span>
                     </label>
-                    <label class="flex flex-col items-center justify-center p-4 rounded-2xl bg-slate-900/80 border border-slate-800 cursor-pointer hover:border-primary/50 transition-all">
+                    <label class="flex flex-col items-center p-3 rounded-2xl bg-slate-900/80 border border-slate-800 hover:border-primary/50 transition-all">
                         <span class="text-xs font-semibold text-slate-400 mb-2">화요일</span>
-                        <input type="checkbox" data-day="tuesday" onchange="updateTracker()" class="w-6 h-6 accent-primary rounded cursor-pointer mb-2" aria-label="화요일 운동 완료">
-                        <span class="text-xs font-bold text-emerald-400">헬스</span>
+                        <select data-split-day="tuesday" onchange="updateTracker()" aria-label="화요일 웨이트 부위" class="w-full mb-3 rounded-lg bg-slate-800 border border-slate-700 px-2 py-2 text-xs text-slate-200"><option>등</option><option>가슴</option><option>하체</option><option>어깨</option><option>팔</option><option>전신</option><option>휴식·회복</option></select>
+                        <input type="checkbox" data-day="tuesday" onchange="updateTracker()" class="w-6 h-6 accent-primary rounded cursor-pointer" aria-label="화요일 운동 또는 회복 완료"><span class="text-[11px] text-slate-500 mt-2">완료</span>
                     </label>
-                    <label class="flex flex-col items-center justify-center p-4 rounded-2xl bg-slate-900/80 border border-slate-800 cursor-pointer hover:border-primary/50 transition-all">
+                    <label class="flex flex-col items-center p-3 rounded-2xl bg-slate-900/80 border border-slate-800 hover:border-primary/50 transition-all">
                         <span class="text-xs font-semibold text-slate-400 mb-2">수요일</span>
-                        <input type="checkbox" data-day="wednesday" onchange="updateTracker()" class="w-6 h-6 accent-primary rounded cursor-pointer mb-2" aria-label="수요일 운동 완료">
-                        <span class="text-xs font-bold text-emerald-400">클라이밍</span>
+                        <select data-split-day="wednesday" onchange="updateTracker()" aria-label="수요일 웨이트 부위" class="w-full mb-3 rounded-lg bg-slate-800 border border-slate-700 px-2 py-2 text-xs text-slate-200"><option>하체</option><option>가슴</option><option>등</option><option>어깨</option><option>팔</option><option>전신</option><option>휴식·회복</option></select>
+                        <input type="checkbox" data-day="wednesday" onchange="updateTracker()" class="w-6 h-6 accent-primary rounded cursor-pointer" aria-label="수요일 운동 또는 회복 완료"><span class="text-[11px] text-slate-500 mt-2">완료</span>
                     </label>
-                    <label class="flex flex-col items-center justify-center p-4 rounded-2xl bg-slate-900/80 border border-slate-800 cursor-pointer hover:border-primary/50 transition-all">
+                    <label class="flex flex-col items-center p-3 rounded-2xl bg-slate-900/80 border border-slate-800 hover:border-primary/50 transition-all">
                         <span class="text-xs font-semibold text-slate-400 mb-2">목요일</span>
-                        <input type="checkbox" onchange="updateTracker()" class="w-6 h-6 accent-primary rounded cursor-pointer mb-2">
-                        <span class="text-xs font-bold text-slate-500">휴식</span>
+                        <select data-split-day="thursday" onchange="updateTracker()" aria-label="목요일 웨이트 부위" class="w-full mb-3 rounded-lg bg-slate-800 border border-slate-700 px-2 py-2 text-xs text-slate-200"><option>어깨</option><option>가슴</option><option>등</option><option>하체</option><option>팔</option><option>전신</option><option>휴식·회복</option></select>
+                        <input type="checkbox" data-day="thursday" onchange="updateTracker()" class="w-6 h-6 accent-primary rounded cursor-pointer" aria-label="목요일 운동 또는 회복 완료"><span class="text-[11px] text-slate-500 mt-2">완료</span>
                     </label>
-                    <label class="flex flex-col items-center justify-center p-4 rounded-2xl bg-slate-900/80 border border-slate-800 cursor-pointer hover:border-primary/50 transition-all">
+                    <label class="flex flex-col items-center p-3 rounded-2xl bg-slate-900/80 border border-slate-800 hover:border-primary/50 transition-all">
                         <span class="text-xs font-semibold text-slate-400 mb-2">금요일</span>
-                        <input type="checkbox" onchange="updateTracker()" class="w-6 h-6 accent-primary rounded cursor-pointer mb-2">
-                        <span class="text-xs font-bold text-slate-500">수영</span>
+                        <select data-split-day="friday" onchange="updateTracker()" aria-label="금요일 웨이트 부위" class="w-full mb-3 rounded-lg bg-slate-800 border border-slate-700 px-2 py-2 text-xs text-slate-200"><option>팔</option><option>가슴</option><option>등</option><option>하체</option><option>어깨</option><option>전신</option><option>휴식·회복</option></select>
+                        <input type="checkbox" data-day="friday" onchange="updateTracker()" class="w-6 h-6 accent-primary rounded cursor-pointer" aria-label="금요일 운동 또는 회복 완료"><span class="text-[11px] text-slate-500 mt-2">완료</span>
                     </label>
-                    <label class="flex flex-col items-center justify-center p-4 rounded-2xl bg-slate-900/80 border border-slate-800 cursor-pointer hover:border-primary/50 transition-all">
+                    <label class="flex flex-col items-center p-3 rounded-2xl bg-slate-900/80 border border-slate-800 hover:border-primary/50 transition-all">
                         <span class="text-xs font-semibold text-slate-400 mb-2">토요일</span>
-                        <input type="checkbox" onchange="updateTracker()" class="w-6 h-6 accent-primary rounded cursor-pointer mb-2">
-                        <span class="text-xs font-bold text-slate-500">사이클</span>
+                        <select data-split-day="saturday" onchange="updateTracker()" aria-label="토요일 웨이트 부위" class="w-full mb-3 rounded-lg bg-slate-800 border border-slate-700 px-2 py-2 text-xs text-slate-200"><option>가슴</option><option>등</option><option>하체</option><option>어깨</option><option>팔</option><option>전신</option><option>휴식·회복</option></select>
+                        <input type="checkbox" data-day="saturday" onchange="updateTracker()" class="w-6 h-6 accent-primary rounded cursor-pointer" aria-label="토요일 운동 또는 회복 완료"><span class="text-[11px] text-slate-500 mt-2">완료</span>
                     </label>
-                    <label class="flex flex-col items-center justify-center p-4 rounded-2xl bg-slate-900/80 border border-slate-800 cursor-pointer hover:border-primary/50 transition-all">
+                    <label class="flex flex-col items-center p-3 rounded-2xl bg-slate-900/80 border border-slate-800 hover:border-primary/50 transition-all">
                         <span class="text-xs font-semibold text-slate-400 mb-2">일요일</span>
-                        <input type="checkbox" onchange="updateTracker()" class="w-6 h-6 accent-primary rounded cursor-pointer mb-2">
-                        <span class="text-xs font-bold text-slate-500">자연 휴식</span>
+                        <select data-split-day="sunday" onchange="updateTracker()" aria-label="일요일 웨이트 부위" class="w-full mb-3 rounded-lg bg-slate-800 border border-slate-700 px-2 py-2 text-xs text-slate-200"><option>휴식·회복</option><option>가슴</option><option>등</option><option>하체</option><option>어깨</option><option>팔</option><option>전신</option></select>
+                        <input type="checkbox" data-day="sunday" onchange="updateTracker()" class="w-6 h-6 accent-primary rounded cursor-pointer" aria-label="일요일 운동 또는 회복 완료"><span class="text-[11px] text-slate-500 mt-2">완료</span>
                     </label>
+                </div>
+
+                <div id="weekly-badge" class="mb-8 p-5 rounded-2xl border border-slate-700 bg-slate-900/70 flex items-center gap-4" role="status" aria-live="polite">
+                    <div id="weekly-badge-icon" class="w-14 h-14 shrink-0 rounded-2xl bg-slate-800 text-slate-500 flex items-center justify-center text-2xl"><i class="fa-solid fa-medal"></i></div>
+                    <div><p id="weekly-badge-title" class="font-extrabold text-slate-300">주간 루틴 완주 배지</p><p id="weekly-badge-description" class="text-xs text-slate-500 mt-1">요일별 계획을 눌러 보고 7일 기록을 완성해 보세요.</p></div>
                 </div>
 
                 <div class="p-4 rounded-2xl bg-primary/10 border border-primary/20 flex items-center gap-3 text-primary text-sm font-medium">
                     <i class="fa-solid fa-circle-info text-lg"></i>
-                    <span>꾸준함이 실력을 만듭니다! 체크박스를 눌러 이번 주 목표 달성 여부를 기록하세요.</span>
+                    <span>제 운동 루틴을 보여주는 인터랙티브 포트폴리오예요. 요일별 계획을 바꾸고 체크해 7일 배지를 완성해 보세요.</span>
                 </div>
             </div>
         </div>
@@ -657,6 +820,146 @@
             if (shouldSave) saveStored('vitaSteps', steps);
         }
 
+        const goalPlanData = {
+            gain: {
+                title: '근육량 늘리기',
+                subtitle: '웨이트 3일 · 러닝 2일 · 회복 2일',
+                icon: 'fa-dumbbell',
+                workout: [
+                    ['월요일', '가슴·어깨·삼두: 체스트 프레스, 숄더 프레스, 삼두 운동'],
+                    ['화요일', '가벼운 러닝 20~30분 또는 산책'],
+                    ['수요일', '등·이두: 랫풀다운, 시티드 로우, 이두 운동'],
+                    ['목요일', '휴식과 가벼운 스트레칭'],
+                    ['금요일', '하체·코어: 스쿼트 또는 레그 프레스, 힙힌지, 플랭크'],
+                    ['토요일', '편안한 페이스 러닝 20~30분'],
+                    ['일요일', '휴식 및 다음 주 운동 준비']
+                ],
+                meals: [
+                    ['월요일', '아침 오트밀·우유·바나나 · 점심 밥·닭고기·채소 · 저녁 밥·두부·달걀'],
+                    ['화요일', '아침 달걀·토스트·과일 · 점심 밥·생선·채소 · 저녁 고구마·닭고기·샐러드'],
+                    ['수요일', '아침 요거트·견과·과일 · 점심 밥·소고기 또는 콩류·채소 · 저녁 밥·생선·채소'],
+                    ['목요일', '아침 밥·달걀·김 · 점심 밥·닭고기·채소 · 저녁 두부덮밥·채소'],
+                    ['금요일', '아침 오트밀·우유·과일 · 점심 밥·돼지고기 살코기·채소 · 저녁 밥·달걀·두부'],
+                    ['토요일', '아침 달걀·토스트·우유 · 점심 밥·생선·채소 · 저녁 파스타·닭고기·채소'],
+                    ['일요일', '아침 요거트·오트·과일 · 점심 밥·두부 또는 고기·채소 · 저녁 밥·생선·달걀']
+                ],
+                tip: '끼니를 규칙적으로 챙기고, 식사량이 부족하다고 느끼면 우유·요거트·과일 같은 간식을 더해 보세요.'
+            },
+            fatLoss: {
+                title: '체지방 감량',
+                subtitle: '전신 근력 2일 · 러닝 3일 · 회복 2일',
+                icon: 'fa-person-running',
+                workout: [
+                    ['월요일', '전신 웨이트: 스쿼트, 체스트 프레스, 로우 동작'],
+                    ['화요일', '편안한 러닝 또는 빠르게 걷기 20~30분'],
+                    ['수요일', '회복 산책 20분 또는 휴식'],
+                    ['목요일', '전신 웨이트: 힙힌지, 랫풀다운, 숄더 프레스'],
+                    ['금요일', '휴식과 가벼운 스트레칭'],
+                    ['토요일', '대화 가능한 강도의 러닝 25~35분'],
+                    ['일요일', '가벼운 산책 또는 휴식']
+                ],
+                meals: [
+                    ['월요일', '아침 달걀·토스트·과일 · 점심 밥·닭고기·채소 · 저녁 두부·채소·밥'],
+                    ['화요일', '아침 플레인 요거트·오트·과일 · 점심 밥·생선·채소 · 저녁 달걀·채소볶음·밥'],
+                    ['수요일', '아침 밥·달걀·김 · 점심 콩류·밥·채소 · 저녁 닭고기·샐러드·고구마'],
+                    ['목요일', '아침 오트밀·우유·과일 · 점심 밥·살코기·채소 · 저녁 생선·채소·밥'],
+                    ['금요일', '아침 달걀·토스트·토마토 · 점심 밥·두부·채소 · 저녁 닭고기·채소수프·감자'],
+                    ['토요일', '아침 요거트·과일·견과 · 점심 밥·생선·채소 · 저녁 달걀·두부·채소'],
+                    ['일요일', '아침 밥·달걀·채소 · 점심 닭고기 또는 콩류·밥·채소 · 저녁 두부·생선·채소']
+                ],
+                tip: '끼니를 거르거나 특정 음식을 완전히 끊기보다, 규칙적인 식사와 채소·단백질 식품을 곁들인 균형을 우선해 보세요.'
+            }
+        };
+
+        function switchGoalPlan(goalKey) {
+            const plan = goalPlanData[goalKey];
+            if (!plan) return;
+
+            document.querySelectorAll('.goal-tab').forEach(button => {
+                const isActive = button.id === `goal-tab-${goalKey === 'gain' ? 'gain' : 'fat-loss'}`;
+                button.setAttribute('aria-selected', String(isActive));
+                button.tabIndex = isActive ? 0 : -1;
+                button.className = isActive
+                    ? 'goal-tab px-5 py-3 rounded-xl bg-primary text-darkbg font-bold text-sm'
+                    : 'goal-tab px-5 py-3 rounded-xl bg-slate-800 text-slate-300 font-bold text-sm hover:bg-slate-700';
+            });
+
+            const panel = document.getElementById('goal-plan-panel');
+            panel.setAttribute('aria-labelledby', `goal-tab-${goalKey === 'gain' ? 'gain' : 'fat-loss'}`);
+            panel.innerHTML = `
+                <article class="bg-cardbg rounded-3xl p-6 sm:p-8 border border-slate-800 shadow-xl">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-12 h-12 rounded-2xl bg-primary/10 text-primary flex items-center justify-center text-xl"><i class="fa-solid ${plan.icon}"></i></div>
+                        <div><p class="text-xs text-primary font-bold tracking-wider">${plan.title.toUpperCase()}</p><h3 class="text-xl font-black text-white mt-1">1주일 운동 계획</h3></div>
+                    </div>
+                    <p class="text-xs text-slate-400 mb-5">${plan.subtitle}</p>
+                    <ol class="space-y-3">
+                        ${plan.workout.map(([day, activity]) => `<li class="flex gap-3 p-3 rounded-xl bg-slate-900/70"><span class="w-14 shrink-0 text-xs font-bold text-primary pt-0.5">${day}</span><span class="text-sm text-slate-300 leading-relaxed">${activity}</span></li>`).join('')}
+                    </ol>
+                </article>
+                <article class="bg-cardbg rounded-3xl p-6 sm:p-8 border border-slate-800 shadow-xl">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-12 h-12 rounded-2xl bg-amber-400/10 text-amber-300 flex items-center justify-center text-xl"><i class="fa-solid fa-bowl-food"></i></div>
+                        <div><p class="text-xs text-amber-300 font-bold tracking-wider">BALANCED MEALS</p><h3 class="text-xl font-black text-white mt-1">1주일 식단 예시</h3></div>
+                    </div>
+                    <p class="text-xs text-slate-400 mb-5">아래 메뉴는 바꿔 먹을 수 있는 아이디어입니다. 간식은 배고픔과 활동량에 따라 선택하세요.</p>
+                    <ol class="space-y-3">
+                        ${plan.meals.map(([day, menu]) => `<li class="p-3 rounded-xl bg-slate-900/70"><span class="block text-xs font-bold text-amber-300 mb-1">${day}</span><span class="text-sm text-slate-300 leading-relaxed">${menu}</span></li>`).join('')}
+                    </ol>
+                    <p class="mt-5 p-4 rounded-xl bg-slate-900/70 text-xs text-slate-400 leading-relaxed"><i class="fa-solid fa-lightbulb text-amber-300 mr-1"></i>${plan.tip}</p>
+                </article>
+            `;
+        }
+
+        function moveGoalPlanTab(event) {
+            if (!['ArrowRight', 'ArrowLeft', 'Home', 'End'].includes(event.key)) return;
+            event.preventDefault();
+            const tabs = Array.from(document.querySelectorAll('.goal-tab'));
+            const currentIndex = tabs.indexOf(event.currentTarget);
+            const nextIndex = event.key === 'Home' ? 0 : event.key === 'End' ? tabs.length - 1 : (currentIndex + (event.key === 'ArrowRight' ? 1 : tabs.length - 1)) % tabs.length;
+            const nextTab = tabs[nextIndex];
+            switchGoalPlan(nextTab.id === 'goal-tab-gain' ? 'gain' : 'fatLoss');
+            nextTab.focus();
+        }
+
+        function recommendExercise(event) {
+            event.preventDefault();
+            const heightCm = Number(document.getElementById('recommend-height').value);
+            const weightKg = Number(document.getElementById('recommend-weight').value);
+            if (!Number.isFinite(heightCm) || !Number.isFinite(weightKg) || heightCm <= 0 || weightKg <= 0) return;
+
+            const bmi = weightKg / ((heightCm / 100) ** 2);
+            let range;
+            let title;
+            let recommendation;
+
+            if (bmi < 18.5) {
+                range = 'BMI 18.5 미만 참고 구간';
+                title = '근력 기초와 충분한 회복에 초점을 맞춰 보세요';
+                recommendation = '가벼운 전신 웨이트를 주 2회부터 시작해 자세와 회복을 익혀 보세요. 러닝은 짧고 편안한 강도로 곁들이고, 체중이나 근육량을 늘리는 것이 목표라면 식사를 지나치게 제한하지 않는 편이 좋습니다.';
+            } else if (bmi < 23) {
+                range = 'BMI 18.5~22.9 참고 구간';
+                title = '러닝과 웨이트를 균형 있게 구성해 보세요';
+                recommendation = '전신 근력 운동을 주 2일 이상 하고, 러닝이나 빠르게 걷기를 현재 체력에 맞춰 더해 보세요. 운동 시간과 강도는 편안한 수준에서 시작해 조금씩 늘릴 수 있습니다.';
+            } else if (bmi < 25) {
+                range = 'BMI 23.0~24.9 참고 구간';
+                title = '꾸준한 유산소와 근력 운동을 함께 해 보세요';
+                recommendation = '빠르게 걷기나 가벼운 달리기를 짧게 나누어 하고, 전신 웨이트를 주 2일 이상 곁들여 보세요. 체지방 감량이 목표라면 무리한 단기 감량보다 지속 가능한 운동과 식사 습관에 초점을 맞추세요.';
+            } else {
+                range = 'BMI 25 이상 참고 구간';
+                title = '부담이 적은 유산소부터 차근차근 시작해 보세요';
+                recommendation = '빠르게 걷기나 걷기와 달리기를 번갈아 하는 방식으로 시작하고, 전신 근력 운동을 주 2일 이상 더해 보세요. 관절이 불편하면 걷기처럼 충격이 적은 활동을 고르고, 주간 활동량을 서서히 늘리세요.';
+            }
+
+            const result = document.getElementById('exercise-recommendation');
+            document.getElementById('recommendation-bmi').textContent = `BMI ${bmi.toFixed(1)} · ${range}`;
+            document.getElementById('recommendation-title').textContent = title;
+            document.getElementById('recommendation-text').textContent = recommendation;
+            result.hidden = false;
+        }
+
+        switchGoalPlan('gain');
+
         const routinesData = {
             running: {
                 title: '러닝 & 페이스 트레이닝',
@@ -672,27 +975,6 @@
                 details: ['운동 전 가벼운 관절 준비운동', '하체·밀기·당기기 동작을 균형 있게 구성', '정확한 자세와 충분한 휴식 우선'],
                 tip: '무게를 올리기 전에 정확한 자세를 익히고, 운동 사이 충분히 회복하세요.'
             },
-            climbing: {
-                title: '실내 클라이밍 (볼더링)',
-                icon: 'fa-mountain',
-                desc: '전신 근력과 문제 해결 능력을 함께 기르는 스포츠.',
-                details: ['쉬운 문제로 충분히 몸 풀기', '발 디딤과 무게 중심 이동에 집중', '세션 사이 휴식과 손가락 회복 챙기기'],
-                tip: '손가락 관절 부상 방지를 위해 클라이밍 전 충분히 준비운동을 하세요.'
-            },
-            swimming: {
-                title: '수영 & 아쿠아 트레이닝',
-                icon: 'fa-water',
-                desc: '물의 저항을 활용해 전신을 움직이는 유산소 운동.',
-                details: ['입수 전 어깨와 발목 가동성 준비', '짧은 구간을 나누어 편안한 호흡 연습', '세션 마지막에는 천천히 쿨다운'],
-                tip: '호흡 리듬을 일정하게 유지하고 무리하지 않는 속도로 연습하세요.'
-            },
-            cycling: {
-                title: '사이클링 & 라이딩',
-                icon: 'fa-bicycle',
-                desc: '페이스 조절과 코스에 따른 전략이 중요한 야외 운동.',
-                details: ['출발 전 브레이크와 타이어 상태 확인', '편안한 기어와 일정한 페이스 유지', '헬멧 착용과 수분 보충 잊지 않기'],
-                tip: '안전 장비를 갖추고 라이딩 중에는 수분을 꾸준히 보충하세요.'
-            }
         };
 
         function switchTab(tabKey) {
@@ -788,8 +1070,29 @@
             document.getElementById('tracker-percent').innerText = percent + '%';
             document.getElementById('hero-week-count').innerText = checked;
 
+            const badge = document.getElementById('weekly-badge');
+            const badgeIcon = document.getElementById('weekly-badge-icon');
+            const badgeTitle = document.getElementById('weekly-badge-title');
+            const badgeDescription = document.getElementById('weekly-badge-description');
+            const unlocked = checked === 7;
+            badge.classList.toggle('border-primary/50', unlocked);
+            badge.classList.toggle('bg-primary/10', unlocked);
+            badgeIcon.className = unlocked
+                ? 'w-14 h-14 shrink-0 rounded-2xl bg-primary/15 text-primary flex items-center justify-center text-2xl'
+                : 'w-14 h-14 shrink-0 rounded-2xl bg-slate-800 text-slate-500 flex items-center justify-center text-2xl';
+            badgeTitle.className = unlocked ? 'font-extrabold text-primary' : 'font-extrabold text-slate-300';
+            badgeTitle.textContent = unlocked ? '주간 루틴 완주 배지 획득!' : '주간 루틴 완주 배지';
+            badgeDescription.textContent = unlocked
+                ? '한 주의 운동과 회복 계획을 모두 기록했어요. 꾸준한 실천을 축하합니다!'
+                : `${checked}/7일 기록 완료 · 7일 운동·회복 기록을 마치면 배지를 획득합니다.`;
+
             if (shouldSave) {
                 saveStored('vitaWorkoutDays', Array.from(checkboxes, checkbox => checkbox.checked));
+                const splits = {};
+                document.querySelectorAll('#tracker select[data-split-day]').forEach(select => {
+                    splits[select.dataset.splitDay] = select.value;
+                });
+                saveStored('vitaWorkoutSplits', splits);
             }
         }
 
@@ -896,6 +1199,13 @@
             const checkboxes = document.querySelectorAll('#tracker input[type="checkbox"]');
             checkboxes.forEach((checkbox, index) => {
                 checkbox.checked = Array.isArray(savedDays) && savedDays[index] === true;
+            });
+            const savedSplits = readStored('vitaWorkoutSplits', {});
+            document.querySelectorAll('#tracker select[data-split-day]').forEach(select => {
+                const savedValue = savedSplits && savedSplits[select.dataset.splitDay];
+                if (savedValue && Array.from(select.options).some(option => option.value === savedValue)) {
+                    select.value = savedValue;
+                }
             });
             updateTracker(false);
 
